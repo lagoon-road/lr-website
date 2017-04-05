@@ -10,13 +10,15 @@ body {
   background-position: center 0, center 0;
   box-sizing: border-box;
   padding: 0 20px;
-  border: 3px solid #b2afee;
+  overflow: hidden;
+  min-height: 2000px;
 }
 .wrapper #content {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
   padding: 20px;
-  margin: 440px auto 60px auto;
+  margin: 46% auto 100px auto;
   max-width: 800px;
+  min-height: 1000px;
 }

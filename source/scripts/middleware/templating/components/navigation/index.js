@@ -1,7 +1,13 @@
 module.exports = (next, relay) => {
   relay.extensions.renderer.render(`
     <nav>
-      hey
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/faq">Faq</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
     </nav>
   `, '#navigation');
   next();
