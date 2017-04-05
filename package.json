@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "css": "node_modules/.bin/minify --output public/stylesheets/styles.css source/stylesheets/styles.css",
-    "js-min": "node_modules/.bin/browserify source/scripts/bootstrap/client.js -t [ babelify --presets [ latest ] ] --ignore-missing | uglifyjs > public/scripts/main.min.js && rm -f public/scripts/main.js",
-    "js-file-size": "node_modules/.bin/browserify source/bootstrap/scripts/client.js --outfile public/scripts/main.js -t [ babelify --presets [ latest ] ] --ignore-missing --list | xargs ls -la --sort=size",
-    "serve": "NODE_ENV=development node_modules/.bin/nodemon --harmony source/scripts/bootstrap/webserver.js",
+    "js-min": "node_modules/.bin/browserify source/bootstrap/client.js -t [ babelify --presets [ latest ] ] --ignore-missing | uglifyjs > public/scripts/main.min.js && rm -f public/scripts/main.js",
+    "js-file-size": "node_modules/.bin/browserify source/bootstrap/client.js --outfile public/scripts/main.js -t [ babelify --presets [ latest ] ] --ignore-missing --list | xargs ls -la --sort=size",
+    "serve": "NODE_ENV=development node_modules/.bin/nodemon --harmony source/bootstrap/webserver.js",
     "prod-serve": "NODE_ENV=production node_modules/.bin/nodemon --harmony source/bootstrap/webserver.js",
     "watch": "npm-watch"
   },
@@ -27,7 +27,7 @@
   "watch": {
     "js-min": {
       "patterns": [
-        "source/scripts"
+        "source/**"
       ],
       "extensions": "js"
     },
