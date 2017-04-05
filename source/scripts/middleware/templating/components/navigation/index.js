@@ -1,6 +1,8 @@
 module.exports = (next, relay) => {
   relay.extensions.renderer.render(`
-    <h1>Navigation</h1>
+    <nav>
+      hey
+    </nav>
   `, '#navigation');
   next();
 }

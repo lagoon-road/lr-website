@@ -45,6 +45,7 @@
     "browserify": "^14.0.0",
     "minifier": "^0.8.1",
     "npm-watch": "^0.1.8",
+    "pure-css": "^1.0.4",
     "purecss": "^0.6.2",
     "uglify-js-harmony": "^2.7.5"
   },

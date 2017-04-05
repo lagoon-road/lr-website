@@ -8,11 +8,16 @@ module.exports = (next, relay) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="Roy Niels">
-        <link rel="stylesheet" href="/public/css/styles.css">
-        <script src="/public/js/main.min.js?v=1"></script>
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+        <script src="/scripts/main.min.js?v=1"></script>
       </head>
       <body>
         <section id="navigation"></section>
+        <section class="wrapper">
+          <article id="content">
+            Some shit
+          </article>
+        </section>
       </body>
     </html>
   `);

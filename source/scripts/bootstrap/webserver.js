@@ -1,8 +1,6 @@
 const settings    = require('../extensions/settings/webserver');
 const protocol    = require('http');
 const server      = protocol.createServer();
-const serveStatic = require('serve-static');
-const statics     = serveStatic('public');
 const router      = require('lr-server-router')(server, settings.redirectDomain);
 const road        = require('lr-core')('webserver');
 const renderer    = require('lr-server-renderer');
@@ -15,12 +13,11 @@ road
   .extension('router', router, true)
   .extension('renderer', renderer())
   .middleware({
-    statics,
     'response.html.200'                : require('../middleware/response/html/200'),
     'response.html.404'                : require('../middleware/response/html/404'),
     'response.html.500'                : require('../middleware/response/html/500'),
     'templating.layouts.default'       : require('../middleware/templating/layouts/default'),
     'templating.components.navigation' : require('../middleware/templating/components/navigation'),
-  }, 'static');
+  });
 
 require('./road')(road);
