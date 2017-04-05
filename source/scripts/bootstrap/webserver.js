@@ -18,6 +18,11 @@ road
     'response.html.500'                : require('../middleware/response/html/500'),
     'templating.layouts.default'       : require('../middleware/templating/layouts/default'),
     'templating.components.navigation' : require('../middleware/templating/components/navigation'),
+    'templating.components.about'      : require('../middleware/templating/components/about'),
+    'templating.components.home'       : require('../middleware/templating/components/home'),
+    'templating.components.reference'  : require('../middleware/templating/components/reference'),
+    'templating.components.faq'        : require('../middleware/templating/components/faq'),
+    'templating.components.guide'      : require('../middleware/templating/components/guide'),
   });
 
 require('./road')(road);
