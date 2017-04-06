@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   road
     .extension('router', router, true)
     .extension('renderer', renderer())
-    .middleware({
-      'events.navigation' : require('../middleware/events/navigation')
-    });
+    // .middleware({
+    //   'events.navigation' : require('../middleware/events/navigation')
+    // });
 
   require('./road')(road);
 });
