@@ -27,7 +27,7 @@
   "watch": {
     "js-min": {
       "patterns": [
-        "source/**"
+        "source/*"
       ],
       "extensions": "js"
     },

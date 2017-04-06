@@ -13,6 +13,7 @@ road
   .extension('router', router, true)
   .extension('renderer', renderer())
   .middleware({
+    'response.html'              : require('../middleware/response'),
     'templating.layouts.default' : require('../middleware/templating/layouts/default'),
   });
 
