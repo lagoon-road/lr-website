@@ -12,8 +12,15 @@ module.exports = (next, relay) => {
         <script src="/scripts/main.min.js?v=1"></script>
       </head>
       <body>
+        <img src="images/island.svg" class="island">
         <section id="navigation"></section>
         <section class="wrapper">
+          <img src="images/tree.svg" class="tree">
+          <div class="logo">
+            <img src="images/logo.svg">
+            <h1>Lagoon road</h1>
+            <p>Laid back webapps</p>
+          </div>
           <article id="content">
             Some shit
           </article>

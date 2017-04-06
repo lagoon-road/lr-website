@@ -5,20 +5,103 @@ body {
   max-width: 1000px;
   margin: 60px auto 0 auto;
   background-image: url(../../../images/background-top.svg), url(../../../images/background.svg);
-  background-size: contain, contain;
   background-repeat: no-repeat, repeat-y;
   background-position: center 0, center 0;
   box-sizing: border-box;
   padding: 0 20px;
   overflow: hidden;
-  min-height: 2000px;
+  position: relative;
 }
 .wrapper #content {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
   padding: 20px;
-  margin: 46% auto 100px auto;
+  margin: 500px auto 100px auto;
   max-width: 800px;
   min-height: 1000px;
+  z-index: 2;
+  position: relative;
+}
+.wrapper .logo {
+  width: 250px;
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  margin-left: -370px;
+  text-align: center;
+  z-index: 3;
+}
+.wrapper .logo img {
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
+}
+.wrapper .logo h1 {
+  font: 2.8rem/2.8rem 'Pacifico';
+  color: orange;
+  margin: 0;
+}
+.wrapper .logo p {
+  color: #666;
+  font: 1rem/1rem 'Oswald';
+  text-transform: uppercase;
+  position: absolute;
+  right: 10px;
+  bottom: -40px;
+}
+.wrapper .logo.minimal h1,
+.wrapper .logo.minimal p {
+  display: none;
+}
+.wrapper .tree {
+  position: absolute;
+  left: 400px;
+  top: 300px;
+  width: 180px;
+}
+.island {
+  position: absolute;
+  left: -100px;
+  bottom: 0;
+  width: 215px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    background-size: 700px, 700px;
+  }
+  .wrapper .logo {
+    margin-left: -125px;
+  }
+  .wrapper .tree {
+    left: 50%;
+    margin-left: -100px;
+    top: 170px;
+    width: 140px;
+  }
+  .island {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .wrapper {
+    background-size: 568px, 568px;
+  }
+  .wrapper .logo {
+    margin-left: -125px;
+    top: 150px;
+  }
+  .wrapper .logo img {
+    width: 150px;
+  }
+  .wrapper #content {
+    margin-top: 250px;
+  }
+  .wrapper .tree {
+    display: none;
+  }
+  .island {
+    display: none;
+  }
 }
