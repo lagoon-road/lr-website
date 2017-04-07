@@ -5,6 +5,7 @@
   right: 0;
   top: 0;
   background-color: #000;
+  z-index: 4;
 }
 #navigation ul {
   padding: 0;

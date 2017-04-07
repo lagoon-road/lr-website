@@ -1,9 +1,13 @@
 const velocity = require('velocity-animate');
+let init       = true;
 
 module.exports = (next, relay) => {
+  const body    = document.querySelector('body');
   const content = document.querySelector('#content');
   const logo    = document.querySelector('.logo');
   const logoImg = document.querySelector('.logo img');
+  let cars      = [].slice.call(document.querySelectorAll('.car'));
+  let clouds    = [].slice.call(document.querySelectorAll('.cloud'));
   const media   = {
     desktop : {
       content : {
@@ -51,9 +55,35 @@ module.exports = (next, relay) => {
     }
   }
 
+  function sky() {
+    if (clouds.length > 0) {
+      const cloud      = clouds.shift();
+      const top        = Math.round(dimensions.height * Math.random()) - cloud.clientHeight;
+      cloud.style.left = -cloud.clientWidth + 'px';
+      cloud.style.top  = top + 'px';
+      const duration   = dimensions.width * Math.round(Math.random() * 4 + 9); // higher is slower
+      const complete   = function() {
+        clouds.push(cloud);
+      }
+      velocity(cloud, { left : dimensions.width, top : top - 500 + 'px' }, { duration, complete, easing : 'linear' });
+    }
+  }
+
+  function drive() {
+    const car      = cars.shift();
+    const duration = dimensions.height * Math.round(Math.random() * 3 + 3); // higher is slower
+    const distance = dimensions.height +  150 + 'px'// so the car is offscreen
+    const complete = function() {
+      car.style.top = '-150px';
+      cars.push(car);
+      drive();
+    }
+    velocity(car, { top : distance }, { duration, complete, easing : 'linear' });
+  }
+
   function getDimensions() {
-    let width   = window.innerWidth;
-    let height  = window.innerHeight;
+    let width   = body.clientWidth;
+    let height  = body.clientHeight;
     let current = media.desktop;
     if (width <= media.mobile.max) {
       current = media.mobile;
@@ -79,6 +109,12 @@ module.exports = (next, relay) => {
     velocity(logo, dimensions.media.logo.other, { easing: 'spring', duration : 1000 });
     velocity(logoImg, dimensions.media.logoImg.other, { easing: 'spring', duration : 1000 });
     logo.classList.add('minimal');
+  }
+
+  if (init) {
+    drive();
+    setInterval(sky, 4000);
+    init = false;
   }
   next();
 }
