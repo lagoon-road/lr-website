@@ -4,6 +4,6 @@ module.exports = (next, relay, request) => {
     <pre>
       Oh my, ${ request.url } could not be found
     </pre>
-  `, '#content');
+  `, 'article');
   next();
 }

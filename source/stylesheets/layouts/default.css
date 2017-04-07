@@ -13,16 +13,16 @@ body {
   overflow: hidden;
   position: relative;
 }
-.wrapper #content {
+.wrapper .content {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
-  padding: 20px;
+  padding: 30px;
   margin: 500px auto 100px auto;
   max-width: 800px;
-  min-height: 1000px;
   z-index: 2;
   position: relative;
+  box-sizing: border-box;
 }
 .wrapper .logo {
   width: 250px;
@@ -80,6 +80,16 @@ body {
   width: 215px;
   z-index: 1;
 }
+footer {
+  background-color: #eee;
+  border-radius: 0 0 10px 10px;
+  padding: 30px;
+  text-align: center;
+  margin: 30px -30px -30px -30px;
+  color: #999;
+  font: 200 1rem/1rem 'Oswald';
+  text-transform: uppercase;
+}
 
 @media screen and (max-width: 1000px) {
   .wrapper {
@@ -114,7 +124,7 @@ body {
   .wrapper .logo img {
     width: 150px;
   }
-  .wrapper #content {
+  .wrapper .content {
     margin-top: 250px;
   }
   .wrapper .tree {

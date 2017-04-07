@@ -3,7 +3,7 @@ let init       = true;
 
 module.exports = (next, relay) => {
   const body    = document.querySelector('body');
-  const content = document.querySelector('#content');
+  const content = document.querySelector('.content');
   const logo    = document.querySelector('.logo');
   const logoImg = document.querySelector('.logo img');
   let cars      = [].slice.call(document.querySelectorAll('.car'));

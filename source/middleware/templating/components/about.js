@@ -5,6 +5,6 @@ module.exports = (next, relay) => {
     <div class="bla">
       <h2> nested ja</h2>
     </div>
-  `, '#content');
+  `, 'article');
   next();
 }

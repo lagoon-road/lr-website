@@ -1,7 +1,42 @@
-#content h1 {
+body {
+  font: 400 1.3rem/1.8rem 'PT Sans';
+}
+.content h1 {
   background-color: #eee;
   font: 200 2.6rem/3.2rem 'Oswald';
-  margin: -20px -20px 20px -20px;
+  margin: -30px -30px 30px -30px;
   padding: 18px 20px 22px 20px;
   border-radius: 10px 10px 0 0;
+}
+.content .standout {
+  font-weight: 700;
+}
+.content .standout:first-letter {
+  font: 400 5rem/5rem 'Pacifico';
+  display: inline-block;
+  vertical-align: middle;
+  padding: 8px 30px 10px 20px;
+  float: left;
+}
+.content .highlight {
+  margin: 30px -30px;
+  padding: 30px;
+  background-color: #eee;
+}
+.content .highlight p {
+  margin: 0;
+}
+.content .highlight h2 {
+  margin: 0 0 20px 0;
+}
+.pure-button {
+  border-radius: 20px;
+  color: #fff;
+  background-color: orange;
+  margin-bottom: 7px;
+}
+@media screen and (max-width: 568px) {
+  .pure-button {
+    font-size: 1.1rem;
+  }
 }

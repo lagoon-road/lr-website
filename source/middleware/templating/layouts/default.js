@@ -16,9 +16,6 @@ module.exports = (next, relay) => {
         <img src="images/cloud-1.svg" class="cloud">
         <img src="images/cloud-2.svg" class="cloud">
         <img src="images/cloud-3.svg" class="cloud">
-        <img src="images/cloud-1.svg" class="cloud">
-        <img src="images/cloud-2.svg" class="cloud">
-        <img src="images/cloud-3.svg" class="cloud">
         <section id="navigation"></section>
         <section class="wrapper">
           <img src="images/car-1.svg" class="car">
@@ -30,9 +27,12 @@ module.exports = (next, relay) => {
             <h1>Lagoon road</h1>
             <p>Laid back webapps</p>
           </div>
-          <article id="content">
-            Some shit
-          </article>
+          <div class="content">
+            <article></article>
+            <footer>
+              Lagoon road / Roy Niels / MIT License / ${ new Date().getFullYear() }
+            </footer>
+          </div>
         </section>
       </body>
     </html>
