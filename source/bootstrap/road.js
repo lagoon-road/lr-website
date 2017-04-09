@@ -4,7 +4,6 @@ module.exports = road => {
       .middleware({
         debug                         : (next, relay, request) => { console.log(request.url); next() },
         'components.navigation'       : require('../middleware/components/navigation'),
-        'components.about'            : require('../middleware/components/about'),
         'components.home'             : require('../middleware/components/home'),
         'components.reference'        : require('../middleware/components/reference'),
         'components.lrCore'           : require('../middleware/components/reference/lr-core'),
@@ -36,7 +35,6 @@ module.exports = road => {
       .run('/reference/lr-client-renderer', 'components.lrClientRenderer')
       .run('/reference/lr-url-parser', 'components.lrUrlParser')
       .run('/faq', 'components.faq')
-      .run('/about', 'components.about')
       .noMatch('components.noMatch')
       .error('components.error')
       .done('response.html')
