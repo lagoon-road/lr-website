@@ -6,7 +6,6 @@ module.exports = (next, relay) => {
         <li><a href="/guide">Guide</a></li>
         <li><a href="/reference">Reference</a></li>
         <li><a href="/faq">Faq</a></li>
-        <li><a href="/about">About</a></li>
       </ul>
     </nav>
   `, '#navigation');
