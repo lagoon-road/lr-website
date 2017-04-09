@@ -44,12 +44,12 @@
 <hr>
 <h3 id="function-initialization">Function initialization</h3>
 <p>This package doesn&#39;t have any exposed methods, it does however needs a single argument on creation.</p>
-<pre><code>const protocol = require(&#39;http&#39;);
-const server   = protocol.createServer();
-const router   = require(&#39;lg-server-router&#39;)(server);
-const core     = require(&#39;lr-core&#39;);
-const road     = core(&#39;webserver&#39;)
-  .extension(&#39;router&#39;, router, true);
+<pre><code><span class="hljs-attribute">const protocol</span> = require(<span class="hljs-string">'http'</span>);
+<span class="hljs-attribute">const server</span>   = protocol.createServer();
+<span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lg-server-router'</span>)(server);
+<span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
+<span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'webserver'</span>)
+  .extension(<span class="hljs-string">'router'</span>, router, true);
 </code></pre><hr>
 
     `, 'article');

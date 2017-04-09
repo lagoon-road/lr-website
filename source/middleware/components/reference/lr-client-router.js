@@ -25,7 +25,7 @@
 </tr>
 <tr>
 <td>Size (Browserify, Babel, Uglify and Gzip)</td>
-<td>675 bytes</td>
+<td>612 bytes</td>
 </tr>
 <tr>
 <td>Version</td>
@@ -43,13 +43,13 @@
 </table>
 <hr>
 <h3 id="adding-the-extension-to-lagoon-road">Adding the extension to lagoon road</h3>
-<pre><code>const router   = require(&#39;lg-client-router&#39;);
-const core     = require(&#39;lr-core&#39;);
-const road     = core(&#39;client&#39;)
-  .extension(&#39;router&#39;, router, true);
+<pre><code><span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lg-client-router'</span>);
+<span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
+<span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'client'</span>)
+  .extension(<span class="hljs-string">'router'</span>, router, true);
 </code></pre><hr>
 <h3 id="router-redirect-path-">router.redirect(path)</h3>
-<pre><code>router.redirect(&#39;/some-page&#39;);
+<pre><code><span class="hljs-selector-tag">router</span><span class="hljs-selector-class">.redirect</span>(<span class="hljs-string">'/some-page'</span>);
 </code></pre><p><strong>path:string</strong><br>The path to where you want to redirect, this will trigger an update event on the road.</p>
 <hr>
 

@@ -1,6 +1,6 @@
 const fs              = require('fs');
 const marked          = require('marked');
-const outputDirectory = 'source/middleware/templating/components/reference/';
+const outputDirectory = 'source/middleware/components/reference/';
 const packages        = [
   'lr-core',
   'lr-server-router',
@@ -9,6 +9,12 @@ const packages        = [
   'lr-client-renderer',
   'lr-url-parser'
 ];
+
+marked.setOptions({
+  highlight: function (code) {
+    return require('highlight.js').highlightAuto(code).value;
+  }
+});
 
 function wrapper(html) {
   return `

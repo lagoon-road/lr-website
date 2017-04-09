@@ -1,6 +1,35 @@
 body {
   font: 400 1.3rem/1.8rem 'PT Sans';
 }
+pre {
+  border-radius: 10px;
+  background-color: #FFEFD5;
+  padding: 15px;
+}
+blockquote {
+  border-left: 5px solid #eee;
+  color: #999;
+  margin: 0;
+  padding-left: 30px;
+}
+hr {
+  border: 0;
+  border-bottom: 3px solid #eee;
+  margin: 43px 0 40px 0;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+  margin: 40px 0 0 0;
+}
+table th {
+  text-align: left;
+}
+table td,
+table th {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
 .content h1 {
   background-color: #eee;
   font: 200 2.6rem/3.2rem 'Oswald';

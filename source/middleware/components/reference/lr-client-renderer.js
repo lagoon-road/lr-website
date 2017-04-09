@@ -43,19 +43,19 @@
 </table>
 <hr>
 <h3 id="adding-the-extension-to-lagoon-road">Adding the extension to lagoon road</h3>
-<pre><code>const router   = require(&#39;lg-client-renderer&#39;);
-const core     = require(&#39;lr-core&#39;);
-const road     = core(&#39;client&#39;)
-  .extension(&#39;renderer&#39;, renderer, true);
+<pre><code><span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lg-client-renderer'</span>);
+<span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
+<span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'client'</span>)
+  .extension(<span class="hljs-string">'renderer'</span>, renderer, true);
 </code></pre><hr>
 <h3 id="renderer-render-html-placeholder-">renderer.render(html, placeholder)</h3>
-<pre><code>renderer.render(&#39;&lt;section&gt;...&lt;/section&gt;&#39;, &#39;.placeholderName&#39;);
+<pre><code><span class="hljs-keyword">renderer</span>.<span class="hljs-keyword">render</span>(<span class="hljs-string">'&lt;section&gt;...&lt;/section&gt;'</span>, <span class="hljs-string">'.placeholderName'</span>);
 </code></pre><p><em>Prepare the component to be added to the template.</em></p>
 <p><strong>html:string</strong><br>The components html that you want to load.</p>
 <p><strong>placeholder:string</strong><br>A html selector that should be the parent of the html you want to add. The contents of the placeholder will be removed before adding the new html.</p>
 <hr>
 <h3 id="renderer-html-">renderer.html()</h3>
-<pre><code>renderer.html();
+<pre><code>renderer.html()<span class="hljs-comment">;</span>
 </code></pre><p><em>Replaces all the components that are added with <code>renderer.render</code> to the template at once. This way templates will only be added once even if they have been declared for replacement multiple times. </em></p>
 
     `, 'article');

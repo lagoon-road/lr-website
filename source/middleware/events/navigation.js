@@ -16,7 +16,7 @@ module.exports = (next, relay) => {
       },
       logo : {
         home  : { top : '300px', width: '250px', marginLeft : '-370px' },
-        other : { top : '50px', marginLeft: '-50px', width: '100px' }
+        other : { top : '20px', marginLeft: '-50px', width: '100px' }
       },
       logoImg : {
         home  : { width : '100%' },
@@ -111,10 +111,10 @@ module.exports = (next, relay) => {
     logo.classList.add('minimal');
   }
 
-  if (init) {
-    drive();
-    setInterval(sky, 4000);
-    init = false;
-  }
+  // if (init) {
+  //   drive();
+  //   setInterval(sky, 4000);
+  //   init = false;
+  // }
   next();
 }

@@ -43,23 +43,23 @@
 </table>
 <hr>
 <h3 id="renderer-template-html-">renderer.template(html)</h3>
-<pre><code>renderer.template(&#39;&lt;html&gt;...&lt;/html&gt;&#39;);
+<pre><code>renderer.template(<span class="hljs-comment">'<span class="hljs-doctag">&lt;html&gt;</span>...<span class="hljs-doctag">&lt;/html&gt;</span>');</span>
 </code></pre><p><em>Method sets the template for the output, all components will be added to this template</em></p>
 <p><strong>html:string</strong><br>The template you want to use for the components and state that you might want to add.</p>
 <hr>
 <h3 id="renderer-render-html-placeholder-">renderer.render(html, placeholder)</h3>
-<pre><code>renderer.render(&#39;&lt;section&gt;...&lt;/section&gt;&#39;, &#39;.placeholderName&#39;);
+<pre><code><span class="hljs-keyword">renderer</span>.<span class="hljs-keyword">render</span>(<span class="hljs-string">'&lt;section&gt;...&lt;/section&gt;'</span>, <span class="hljs-string">'.placeholderName'</span>);
 </code></pre><p><em>Adds a component to the template.</em></p>
 <p><strong>html:string</strong><br>The components html that you want to load.</p>
 <p><strong>placeholder:string</strong><br>A html selector that should be the parent of the html you want to add. The contents of the placeholder will be removed before adding the new html.</p>
 <hr>
 <h3 id="renderer-state-state-">renderer.state(state)</h3>
-<pre><code>renderer.state({ data : [...], otherProperties : true });
+<pre><code><span class="hljs-selector-tag">renderer</span><span class="hljs-selector-class">.state</span>({ <span class="hljs-attribute">data </span>: [...], otherProperties : true });
 </code></pre><p><em>Add data to a script tag that you can access on the client again. This prevents loading the same data. The data will be available by accessing <code>window.__state__</code> as json.</em></p>
 <p><strong>state:object</strong><br>An object that has been loaded on the server that you want to transfer to the client.</p>
 <hr>
 <h3 id="renderer-html-">renderer.html()</h3>
-<pre><code>renderer.html();
+<pre><code>renderer.html()<span class="hljs-comment">;</span>
 </code></pre><p><em>Get the final output of the template and components that you have created, this data can be send back as the response to the client.</em></p>
 
     `, 'article');
