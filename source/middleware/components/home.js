@@ -10,9 +10,9 @@ module.exports = (next, relay) => {
         <h2>Where from here?</h2>
         <p>
           <a href="/guide" class="pure-button">Examples in the <strong>guide</strong></a>
-          <a href="/guide" class="pure-button">Nuts & bolts in the <strong>reference</strong></a>
-          <a href="/guide" class="pure-button">Answers in the <strong>FAQ</strong></a>
-          <a href="/guide" class="pure-button">Backgrounds in the <strong>about</strong></a>
+          <a href="/reference" class="pure-button">Nuts & bolts in the <strong>reference</strong></a>
+          <a href="/faq" class="pure-button">Answers in the <strong>FAQ</strong></a>
+          <a href="/about" class="pure-button">Backgrounds in the <strong>about</strong></a>
       </section>
     </section>
   `, 'article');

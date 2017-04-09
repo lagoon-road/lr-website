@@ -1,0 +1,19 @@
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.submenu li {
+  margin: 0;
+  padding: 0;
+}
+.submenu a {
+  display: block;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+}
+.submenu li:first-child a {
+  border-top: 0;
+}

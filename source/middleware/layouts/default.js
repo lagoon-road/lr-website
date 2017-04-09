@@ -12,18 +12,18 @@ module.exports = (next, relay) => {
         <script src="/scripts/main.min.js?v=1"></script>
       </head>
       <body>
-        <img src="images/island.svg" class="island">
-        <img src="images/cloud-1.svg" class="cloud">
-        <img src="images/cloud-2.svg" class="cloud">
-        <img src="images/cloud-3.svg" class="cloud">
+        <img src="/images/island.svg" class="island">
+        <img src="/images/cloud-1.svg" class="cloud">
+        <img src="/images/cloud-2.svg" class="cloud">
+        <img src="/images/cloud-3.svg" class="cloud">
         <section id="navigation"></section>
         <section class="wrapper">
-          <img src="images/car-1.svg" class="car">
-          <img src="images/car-2.svg" class="car">
-          <img src="images/car-3.svg" class="car">
-          <img src="images/tree.svg" class="tree">
+          <img src="/images/car-1.svg" class="car">
+          <img src="/images/car-2.svg" class="car">
+          <img src="/images/car-3.svg" class="car">
+          <img src="/images/tree.svg" class="tree">
           <div class="logo">
-            <img src="images/logo.svg">
+            <img src="/images/logo.svg">
             <h1>Lagoon road</h1>
             <p>Laid back webapps</p>
           </div>

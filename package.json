@@ -4,6 +4,7 @@
   "description": "Source for the documentation website",
   "main": "index.js",
   "scripts": {
+    "ref" : "node reference.js",
     "css": "node_modules/.bin/minify --output public/stylesheets/styles.css source/stylesheets/styles.css",
     "js-min": "node_modules/.bin/browserify source/bootstrap/client.js -t [ babelify --presets [ latest ] ] --ignore-missing | uglifyjs > public/scripts/main.min.js && rm -f public/scripts/main.js",
     "js-file-size": "node_modules/.bin/browserify source/bootstrap/client.js --outfile public/scripts/main.js -t [ babelify --presets [ latest ] ] --ignore-missing --list | xargs ls -la --sort=size",
@@ -44,13 +45,14 @@
     "babelify": "^7.3.0",
     "browserify": "^14.0.0",
     "minifier": "^0.8.1",
+    "uglify-js-harmony": "^2.7.5",
     "npm-watch": "^0.1.8",
     "pure-css": "^1.0.4",
-    "purecss": "^0.6.2",
-    "uglify-js-harmony": "^2.7.5"
+    "purecss": "^0.6.2"
   },
   "homepage": "https://github.com/lagoon-road/lr-website#readme",
   "dependencies": {
+    "marked": "^0.3.6",
     "serve-static": "^1.12.1",
     "velocity-animate": "^1.5.0"
   }

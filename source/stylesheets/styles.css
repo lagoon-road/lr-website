@@ -2,6 +2,7 @@
 @import url('../../node_modules/purecss/build/pure.css');
 @import url('animate.css');
 @import url('typography.css');
+@import url('submenu.css');
 @import url('layouts/default.css');
 @import url('components/navigation.css');
 @import url('components/home.css');
