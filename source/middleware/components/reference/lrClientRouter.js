@@ -25,7 +25,7 @@
 </tr>
 <tr>
 <td>Size (Browserify, Babel, Uglify and Gzip)</td>
-<td>612 bytes</td>
+<td>639 bytes</td>
 </tr>
 <tr>
 <td>Version</td>
