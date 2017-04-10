@@ -12,28 +12,21 @@ module.exports = (next, relay) => {
         <script src="/scripts/main.min.js?v=1"></script>
       </head>
       <body>
-        <img src="/images/island.svg" class="island">
-        <img src="/images/cloud-1.svg" class="cloud">
-        <img src="/images/cloud-2.svg" class="cloud">
-        <img src="/images/cloud-3.svg" class="cloud">
-        <section id="navigation"></section>
-        <section class="wrapper">
+        <div class="animations">
+          <img src="/images/cloud-1.svg" class="cloud cloud-1">
+          <img src="/images/cloud-2.svg" class="cloud cloud-2">
+          <img src="/images/cloud-3.svg" class="cloud cloud-3">
           <img src="/images/car-1.svg" class="car">
-          <img src="/images/car-2.svg" class="car">
-          <img src="/images/car-3.svg" class="car">
-          <img src="/images/tree.svg" class="tree">
-          <div class="logo">
-            <img src="/images/logo.svg">
-            <h1>Lagoon road</h1>
-            <p>Laid back webapps</p>
-          </div>
-          <div class="content">
-            <article></article>
-            <footer>
-              Lagoon road / Roy Niels / MIT License / ${ new Date().getFullYear() }
-            </footer>
-          </div>
-        </section>
+        </div>
+        <img src="/images/tree.svg" class="tree">
+        <img src="/images/logo.svg" class="logo">
+        <section id="navigation"></section>
+        <div class="content">
+          <article></article>
+          <footer>
+            Lagoon road / Roy Niels / MIT License / ${ new Date().getFullYear() }
+          </footer>
+        </div>
       </body>
     </html>
   `);

@@ -1,78 +1,49 @@
 body {
   background-color: #b2afee;
-  overflow-x: hidden;
-}
-.wrapper {
-  max-width: 1000px;
-  margin: 60px auto 0 auto;
   background-image: url(../../../images/background-top.svg), url(../../../images/background.svg);
   background-repeat: no-repeat, repeat-y;
-  background-position: center 0, center 0;
-  box-sizing: border-box;
-  padding: 0 20px;
-  overflow: hidden;
-  position: relative;
+  background-position: center 60px, center 60px;
+  background-size: 100vw, 100vw;
+  overflow-x: hidden;
 }
-.wrapper .content {
+.logo {
+  width: 18vw;
+  position: absolute;
+  margin: 0 41vw;
+  text-align: center;
+  z-index: 3;
+  transform: translateY(28vw) scale(1);
+  transition: transform .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
+}
+.logo.compact {
+  transform: translateY(3vw) scale(.5);
+}
+
+.content {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
   padding: 30px;
-  margin: 500px auto 100px auto;
+  margin: 0 auto 100px auto;
   max-width: 800px;
   z-index: 2;
   position: relative;
   box-sizing: border-box;
+  transform: translateY(40vw);
+  transition: transform .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .logo {
-  width: 250px;
-  position: absolute;
-  top: 300px;
-  left: 50%;
-  margin-left: -370px;
-  text-align: center;
-  z-index: 3;
+.content.compact {
+  transform: translateY(15vw);
 }
-.wrapper .logo img {
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
-}
-.wrapper .logo h1 {
-  font: 2.8rem/2.8rem 'Pacifico';
-  color: orange;
-  margin: 0;
-}
-.wrapper .logo p {
-  color: #666;
-  font: 1rem/1rem 'Oswald';
-  text-transform: uppercase;
-  position: absolute;
-  right: 10px;
-  bottom: -40px;
-}
-.wrapper .logo.minimal h1,
-.wrapper .logo.minimal p {
-  display: none;
-}
-.wrapper .tree {
+
+.tree {
   position: absolute;
   left: 400px;
   top: 300px;
   width: 180px;
 }
-.wrapper .car {
-  position: absolute;
-  left: 50%;
-  margin-left: 45px;
-  top: -100px;
-  width: 50px;
-}
-.cloud {
-  position: absolute;
-  left: -300px;
-  top: 0;
-  z-index: 1;
-  width: 300px;
-}
+
 .island {
   position: absolute;
   left: -100px;
@@ -91,50 +62,111 @@ footer {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 1000px) {
-  .wrapper {
-    background-size: 700px, 700px;
+@keyframes drive {
+  from {
+    transform: translateY(-20vh);
   }
-  .wrapper .logo {
-    margin-left: -125px;
+  to {
+    transform: translateY(400vh);
   }
-  .wrapper .tree {
-    left: 50%;
-    margin-left: -100px;
-    top: 170px;
-    width: 140px;
+}
+.car {
+  position: absolute;
+  top: 0;
+  margin: 0 41vw 0 53vw;
+  width: 6vw;
+  animation-duration: 8s;
+  animation-name: drive;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes cloud-1 {
+  0% {
+    transform: translate(-28vw, 30vh);
   }
-  .island {
-    display: none;
+  70% {
+    transform: translate(100vw, 10vh);
   }
-  .wrapper .car {
-    width: 35px;
-    margin-left: 30px;
+  100% {
+    transform: translate(100vw, 10vh);
+  }
+}
+@keyframes cloud-2 {
+  0% {
+    transform: translate(-28vw, 100vh);
+  }
+  30% {
+    transform: translate(-28vw, 100vh);
+  }
+  100% {
+    transform: translate(100vw, 80vh);
+  }
+}
+@keyframes cloud-3 {
+  0% {
+    transform: translate(-30vw, 200vh);
+  }
+  10% {
+    transform: translate(-30vw, 200vh);
+  }
+  80% {
+    transform: translate(100vw, 180vh);
+  }
+  100% {
+    transform: translate(100vw, 180vh);
+  }
+}
+.cloud {
+  position: absolute;
+  z-index: 1;
+  width: 28vw;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.cloud-1 {
+  animation-duration: 14s;
+  animation-name: cloud-1;
+}
+.cloud-2 {
+  animation-duration: 18s;
+  animation-name: cloud-2;
+}
+.cloud-3 {
+  animation-duration: 20s;
+  animation-name: cloud-3;
+}
+.animations {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .content.compact {
+    transform: translateY(30vw);
+  }
+  .logo.compact {
+    transform: translateY(16vw) scale(.7);
+  }
+  .logo {
+    width: 20vw;
+    margin: 0 40vw;
+  }
+  .car {
+    animation-duration: 16s;
   }
 }
 
-@media screen and (max-width: 568px) {
-  .wrapper {
-    background-size: 568px, 568px;
-  }
-  .wrapper .logo {
-    margin-left: -125px;
-    top: 150px;
-  }
-  .wrapper .logo img {
-    width: 150px;
-  }
-  .wrapper .content {
-    margin-top: 250px;
-  }
-  .wrapper .tree {
-    display: none;
-  }
-  .island {
-    display: none;
-  }
-  .wrapper .car {
-    width: 30px;
-    margin-left: 25px;
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 24vw;
+    margin: 0 38vw;
   }
 }

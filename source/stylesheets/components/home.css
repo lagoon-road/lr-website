@@ -1,3 +1,21 @@
-.home {
-  margin-top: 140px;
+.logo-text {
+  text-align: center;
+  margin-top: 5vw;
+}
+.logo-text h1 {
+  font: 2.6rem/2.6rem 'Pacifico';
+  color: orange;
+  margin: 0;
+  padding: 0 0 20px 0;
+  background: none;
+  position: relative;
+  display: inline-block;
+}
+.logo-text span {
+  color: #666;
+  font: 1rem/1rem 'Oswald';
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

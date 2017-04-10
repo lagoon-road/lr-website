@@ -40,13 +40,6 @@ table th {
 .content .standout {
   font-weight: 700;
 }
-.content .standout:first-letter {
-  font: 400 5rem/5rem 'Pacifico';
-  display: inline-block;
-  vertical-align: middle;
-  padding: 8px 30px 10px 20px;
-  float: left;
-}
 .content .highlight {
   margin: 30px -30px;
   padding: 30px;
