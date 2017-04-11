@@ -1,4 +1,4 @@
-module.exports = (next, relay) => {
+module.exports = (next, relay, request, response) => {
   relay.extensions.renderer.template(`
     <!DOCTYPE html>
     <html lang="en">

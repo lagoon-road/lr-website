@@ -25,9 +25,13 @@ const packages        = [{
   name   : 'lr-url-parser',
   output : 'source/middleware/components/reference/lrUrlParser.js'
 }, {
-  file   : '../lr-examples/README.md',
-  name   : 'lr-examples',
-  output : 'source/middleware/components/guide.js'
+  file   : '../lr-examples/setup.md',
+  name   : 'guide: setup',
+  output : 'source/middleware/components/guide/setup.js'
+}, {
+  file   : '../lr-examples/hello-world.md',
+  name   : 'guide: hello-world',
+  output : 'source/middleware/components/guide/helloWorld.js'
 }];
 
 marked.setOptions({

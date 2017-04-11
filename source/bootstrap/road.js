@@ -14,6 +14,8 @@ module.exports = road => {
         'components.lrUrlParser'      : require('../middleware/components/reference/lrUrlParser'),
         'components.faq'              : require('../middleware/components/faq'),
         'components.guide'            : require('../middleware/components/guide'),
+        'components.guideSetup'       : require('../middleware/components/guide/setup'),
+        'components.guideHelloWorld'  : require('../middleware/components/guide/helloWorld'),
         'components.error'            : require('../middleware/components/error'),
         'components.noMatch'          : require('../middleware/components/noMatch'),
       })
@@ -27,6 +29,8 @@ module.exports = road => {
     .where('webserver', 'client')
       .run('/', 'components.home')
       .run('/guide', 'components.guide')
+      .run('/guide/setup', 'components.guideSetup')
+      .run('/guide/hello-world', 'components.guideHelloWorld')
       .run('/reference', 'components.reference')
       .run('/reference/lr-core', 'components.lrCore')
       .run('/reference/lr-server-router', 'components.lrServerRouter')

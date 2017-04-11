@@ -78,7 +78,7 @@ If you have a multitude of middleware functions that you  want to use it might b
 <h3 id="road-where-environmentid-environmentid-">road.where(environmentId, [...environmentId])</h3>
 <pre><code>road.<span class="hljs-keyword">where</span>(<span class="hljs-string">'webserver'</span>, <span class="hljs-string">'client'</span>);
 </code></pre><p><em>When assigning middleware to the road you might want to switch the environment they need to be assigned to. You can do that by using the <code>where</code> method.</em></p>
-<p><strong>environmentId:string</strong><br>The where method expects at least one argument, which should be a string. This is an environment id to which all the following middleware will be assigned. If you want to assign middleware to multiple environments you can just specify several ids like in the example above.</p>
+<p><strong>environmentId</strong><br>The where method expects at least one argument, which should be a string. This is an environment id to which all the following middleware will be assigned. If you want to assign middleware to multiple environments you can just specify several ids like in the example above.</p>
 <hr>
 <h3 id="road-run-matchvalue-middlewareid-matchvalue-">road.run(matchValue, middlewareId, [matchValue])</h3>
 <pre><code>road.<span class="hljs-built_in">run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'log'</span>);

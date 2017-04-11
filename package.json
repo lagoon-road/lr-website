@@ -4,7 +4,7 @@
   "description": "Source for the documentation website",
   "main": "index.js",
   "scripts": {
-    "docs": "node source/reference.js",
+    "docs": "node source/docs.js",
     "css": "node_modules/.bin/minify --output public/stylesheets/styles.css source/stylesheets/styles.css",
     "js-min": "node_modules/.bin/browserify source/bootstrap/client.js -t [ babelify --presets [ latest ] ] --ignore-missing | uglifyjs > public/scripts/main.min.js && rm -f public/scripts/main.js",
     "js-file-size": "node_modules/.bin/browserify source/bootstrap/client.js --outfile public/scripts/main.js -t [ babelify --presets [ latest ] ] --ignore-missing --list | xargs ls -la --sort=size",
