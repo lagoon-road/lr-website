@@ -16,6 +16,7 @@ module.exports = road => {
         'components.guide'            : require('../middleware/components/guide'),
         'components.guideSetup'       : require('../middleware/components/guide/setup'),
         'components.guideHelloWorld'  : require('../middleware/components/guide/helloWorld'),
+        'components.guideAddingClientSideRouting' : require('../middleware/components/guide/addingClientSideRouting'),
         'components.error'            : require('../middleware/components/error'),
         'components.noMatch'          : require('../middleware/components/noMatch'),
       })
@@ -31,6 +32,7 @@ module.exports = road => {
       .run('/guide', 'components.guide')
       .run('/guide/setup', 'components.guideSetup')
       .run('/guide/hello-world', 'components.guideHelloWorld')
+      .run('/guide/adding-client-side-routing', 'components.guideAddingClientSideRouting')
       .run('/reference', 'components.reference')
       .run('/reference/lr-core', 'components.lrCore')
       .run('/reference/lr-server-router', 'components.lrServerRouter')

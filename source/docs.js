@@ -32,6 +32,14 @@ const packages        = [{
   file   : '../lr-examples/hello-world.md',
   name   : 'guide: hello-world',
   output : 'source/middleware/components/guide/helloWorld.js'
+}, {
+  file   : '../lr-examples/adding-client-side-routing.md',
+  name   : 'guide: adding-client-side-routing',
+  output : 'source/middleware/components/guide/addingClientSideRouting.js'
+}, {
+  file   : '../lr-website/source/middleware/components/faq.md',
+  name   : 'faq',
+  output : 'source/middleware/components/faq.js'
 }];
 
 marked.setOptions({

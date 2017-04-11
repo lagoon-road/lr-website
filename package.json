@@ -37,6 +37,19 @@
         "source/stylesheets"
       ],
       "extensions": "css"
+    },
+    "docs" : {
+      "patterns" : [
+        "source/middleware/components/*",
+        "../lr-examples/*",
+        "../lr-core/*",
+        "../lr-server-router/*",
+        "../lr-server-renderer/*",
+        "../lr-client-renderer/*",
+        "../lr-client-router/*",
+        "../lr-url-parser/*"
+      ],
+      "extensions" : "md"
     }
   },
   "devDependencies": {
