@@ -127,6 +127,8 @@ Every time a update method is called the middleware that matches will be added t
 <p>The relay object is passed from middleware function to middleware function. There are a couple of properties and methods in this object that cannot be overwritten. If you will try to do so, Lagoon road will throw an error to warn you of naming conflicts.</p>
 <h3 id="relay-extensions-object">relay.extensions:object</h3>
 <p>An Object that has all the registered extensions in it. This way all extensions will not get scattered all over the object.</p>
+<h3 id="relay-parameters-object">relay.parameters:object</h3>
+<p>If you are using a parser that supplies you with parameters like <code>lr-url-parser</code>, you can access them via <code>relay.parameters</code>.</p>
 <h3 id="relay-update-options-object-function">relay.update(options:object):function</h3>
 <p>Trigger a manual update event on the road, you are expected to pass an options object in, the options has one mandatory property which is <code>matchValue</code>. <code>matchvalue</code> needs to be a string value. This will be used to match in <code>run</code> hooks.</p>
 <p>The second options propery is optional, it is the <code>updateType</code> property. The default value is <code>get</code>, but can be set to anything. When triggering an update for a HTTP request, it will typically be the method type.</p>
