@@ -9,9 +9,7 @@ module.exports = (next, relay) => {
       <li><a href="/guide/make-a-single-page-app">Turn your server side rendered page into a single page app</a></li>
       <li><a href="/guide/working-with-dom-events">Working with DOM events</a></li>
       <li><a href="/guide/adding-url-parameters-via-a-parser">Adding url parameters via a parser</a></li>
-      <li><a href="/guide/rendering-content-via-renderers">Rendering content via renderers</a></li>
       <li><a href="/guide/stack-and-middleware">Stack and middleware, in-depth</a></li>
-      <li><a href="/guide/writing-middleware">Writing middleware</a></li>
       <li><a href="/guide/writing-extenions">Writing extensions</a></li>
       <li><a href="/guide/writing-parsers">Writing parsers</a></li>
     </ul>

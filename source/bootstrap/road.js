@@ -13,15 +13,16 @@ module.exports = road => {
         'components.lrClientRenderer' : require('../middleware/components/reference/lrClientRenderer'),
         'components.lrUrlParser'      : require('../middleware/components/reference/lrUrlParser'),
         'components.faq'              : require('../middleware/components/faq'),
-        'components.guide'            : require('../middleware/components/guide'),
-        'components.guideSetup'       : require('../middleware/components/guide/setup'),
-        'components.guideHelloWorld'  : require('../middleware/components/guide/helloWorld'),
-        'components.guideAddingServerSideRenderer' : require('../middleware/components/guide/addingServerSideRenderer'),
-        'components.guideHandlingStaticContent' : require('../middleware/components/guide/handlingStaticContent'),
-        'components.guideMakeASinglePageApp' : require('../middleware/components/guide/makeASinglePageApp'),
-        'components.guideWorkingWithDOMEvents' : require('../middleware/components/guide/workingWithDOMEvents'),
         'components.error'            : require('../middleware/components/error'),
         'components.noMatch'          : require('../middleware/components/noMatch'),
+        'components.guide'                              : require('../middleware/components/guide'),
+        'components.guideSetup'                         : require('../middleware/components/guide/setup'),
+        'components.guideHelloWorld'                    : require('../middleware/components/guide/helloWorld'),
+        'components.guideAddingServerSideRenderer'      : require('../middleware/components/guide/addingServerSideRenderer'),
+        'components.guideHandlingStaticContent'         : require('../middleware/components/guide/handlingStaticContent'),
+        'components.guideMakeASinglePageApp'            : require('../middleware/components/guide/makeASinglePageApp'),
+        'components.guideWorkingWithDOMEvents'          : require('../middleware/components/guide/workingWithDOMEvents'),
+        'components.guideAddingUrlParametersViaAParser' : require('../middleware/components/guide/addingUrlParametersViaAParser'),
       })
       .run('*', 'debug')
     .where('webserver')
@@ -39,6 +40,7 @@ module.exports = road => {
       .run('/guide/handling-static-content', 'components.guideHandlingStaticContent')
       .run('/guide/make-a-single-page-app', 'components.guideMakeASinglePageApp')
       .run('/guide/working-with-dom-events', 'components.guideWorkingWithDOMEvents')
+      .run('/guide/adding-url-parameters-via-a-parser', 'components.guideAddingUrlParametersViaAParser')
       .run('/reference', 'components.reference')
       .run('/reference/lr-core', 'components.lrCore')
       .run('/reference/lr-server-router', 'components.lrServerRouter')

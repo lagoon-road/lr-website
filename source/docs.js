@@ -37,6 +37,9 @@ const packages        = [{
   file   : '../lr-examples/working-with-dom-events.md',
   output : 'source/middleware/components/guide/workingWithDOMEvents.js'
 }, {
+  file   : '../lr-examples/adding-url-parameters-via-a-parser.md',
+  output : 'source/middleware/components/guide/addingUrlParametersViaAParser.js'
+}, {
   file   : '../lr-website/source/middleware/components/faq.md',
   output : 'source/middleware/components/faq.js'
 }];

@@ -3,13 +3,13 @@
       relay.extensions.renderer.render(`
         <h1 id="working-with-dom-events">Working with DOM events</h1>
 <p>In this guide we will do a simple <code>console.log</code> from our event middleware that will show you that the DOM is ready to be accessed.</p>
-<h5 id="working-with-dom-events-source-events-navigation-js">working-with-dom-events/source/events/navigation.js</h5>
+<h5 id="working-with-dom-events-source-middleware-events-navigation-js">working-with-dom-events/source/middleware/events/navigation.js</h5>
 <pre><code><span class="hljs-built_in">module</span>.exports = (next, relay) =&gt; {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">\`There</span> are <span class="hljs-string">\$\{</span> <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">\'nav\').children.length</span> <span class="hljs-string">\}</span> menu items<span class="hljs-string">\`);</span>
   next();
 }
 </code></pre><p>Just a regular middleware function that should give is the number of menu items.</p>
-<h5 id="working-with-dom-events-source-bootstrap-client-js">working-with-dom-events/source/bootstrap/client.js</h5>
+<h5 id="working-with-dom-events-source-middleware-bootstrap-client-js">working-with-dom-events/source/middleware/bootstrap/client.js</h5>
 <pre><code><span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"DOMContentLoaded"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
   <span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-router'</span>);
   <span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-renderer'</span>);
@@ -19,7 +19,7 @@
     .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>)
     .middleware({
       <span class="hljs-string">'response'</span>          : <span class="hljs-function">(<span class="hljs-params">next, relay</span>) =&gt;</span> { relay.extensions.renderer.html() },
-      <span class="hljs-string">'events.navigation'</span> : <span class="hljs-built_in">require</span>(<span class="hljs-string">'../events/navigation'</span>)
+      <span class="hljs-string">'events.navigation'</span> : <span class="hljs-built_in">require</span>(<span class="hljs-string">'../middleware/events/navigation'</span>)
     });
 
   <span class="hljs-built_in">require</span>(<span class="hljs-string">'./road'</span>)(road)
@@ -36,7 +36,7 @@
 <blockquote>
 <p>It is good practice to always wrap the <code>client.js</code> file in a <code>DOMContentLoaded</code> event. This way you can always update the road when you need to.</p>
 </blockquote>
-<h5 id="working-with-dom-events-source-bootstrap-road-js">working-with-dom-events/source/bootstrap/road.js</h5>
+<h5 id="working-with-dom-events-source-middleware-bootstrap-road-js">working-with-dom-events/source/middleware/bootstrap/road.js</h5>
 <pre><code><span class="hljs-keyword">const</span> debug = require(<span class="hljs-string">'../extensions/debug'</span>);
 
 <span class="hljs-keyword">module</span>.exports = road =&gt; {
@@ -63,10 +63,14 @@
 </code></pre><p>The last file that has changed is the <code>road.js</code> file. Two changes have been made to this file. We are returning the road object, so the client can initiate the update on <code>DOMContentLoaded</code>. The other change is the following code</p>
 <pre><code><span class="hljs-selector-class">.where</span>(<span class="hljs-string">'client'</span>)
   <span class="hljs-selector-class">.run</span>(<span class="hljs-string">'nav'</span>, <span class="hljs-string">'events.navigation'</span>, <span class="hljs-string">'domReady'</span>)
-</code></pre><p>We have added a listener for the <code>nav</code> html selector with <code>updateType</code> <code>domReady</code>. Every time the navigation is re-rendered it will trigger the appropriate middleware.</p>
+</code></pre><p>We have added a listener for the <code>nav</code> html selector with <code>updateType</code> <code>domReady</code>. Every time the navigation is initialized or re-rendered it will trigger the appropriate middleware.</p>
 <blockquote>
 <p>The <code>lr-client-renderer</code> is the package that sends out events whenever a component is ready and loaded in the dom.</p>
-</blockquote>
+<p>When you want to have a component that should not be re-rendered every single time, which is typical for navigation components, you can add it the the webserver only like so</p>
+<pre><code><span class="hljs-selector-class">.where</span>(<span class="hljs-string">'webserver'</span>)
+  <span class="hljs-selector-class">.run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'components.navigation'</span>)
+</code></pre></blockquote>
+<p>Next: <a href="/guide/adding-url-parameters-via-a-parser">adding-url-parameters-via-a-parser</a></p>
 
     `, 'article');
     next();
