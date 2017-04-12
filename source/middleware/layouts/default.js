@@ -9,7 +9,7 @@ module.exports = (next, relay, request, response) => {
         <meta name="description" content="">
         <meta name="author" content="Roy Niels">
         <link rel="stylesheet" href="/stylesheets/styles.css">
-        <script src="/scripts/main.min.js?v=1"></script>
+        <script src="/scripts/main.min.js"></script>
       </head>
       <body>
         <div class="animations">

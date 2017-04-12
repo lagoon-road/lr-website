@@ -2,12 +2,10 @@
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
         <h1 id="hello-world">Hello world</h1>
-<p>The most simple and of course mandatory example is the hello-world example. In our case it will be a server only response which you can check in your browser. To make it happen on your own machine do the following first</p>
+<p>The most simple and of course mandatory example is the hello-world example. In our case it will be a server only response which you can check in your browser. To make it happen open a browser tab and navigate to <code>http://localhost:8080</code>. This should show you a nice header with <em>Hello World</em>.</p>
 <blockquote>
 <p>Check the <a href="/guide/setup">setup and running the examples</a> to see how to start the webserver.</p>
 </blockquote>
-<p>Open a browser tab and navigate to <code>http://localhost:8080</code></p>
-<p>This should show you a nice header with Hello World.</p>
 <h4 id="the-code">The code</h4>
 <p>Let&#39;s have a look at how the response has been generated.</p>
 <h5 id="hello-world-source-bootstrap-webserver-js">hello-world/source/bootstrap/webserver.js</h5>
@@ -33,7 +31,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <pre><code>const router   = require('lr-server-router')(<span class="hljs-name">server</span>)<span class="hljs-comment">;</span>
 </code></pre><p>The router package is a simple wrapper around the server request event and takes care of routing the request throught the core. As you can see it needs one argument, namely the server that you want to use.</p>
 <blockquote>
-<p>If you want to use a websocket connection instead of the traditional http server. You can write an extension. Read more about <a href="#extensions">extensions</a>.</p>
+<p>Lagoon road doesn&#39;t limit itself to the HTTP protocol. Using websockets, or maybe both together, <a href="guide/extensions">extensions</a> are the way to go.</p>
 </blockquote>
 <p>The next step is initializing the core and create a road object.</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">core</span><span class="hljs-params">(<span class="hljs-string">'webserver'</span>)</span></span>
@@ -43,7 +41,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 </blockquote>
 <p>After we have initialized the road we want to attach our router as an extension.</p>
 <pre><code>.extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
-</code></pre><p>It is very simple to add an extension. Just give it an id, the first argument, add the package, the second argument and you are done. In our case we have a third argument, a boolean. This tells the core to execute the middleware on initialization. This is typically for packages that can trigger updates, like a router, that receives request events.</p>
+</code></pre><p>It is very simple to add an extension. Just give it an id, the first argument, add the package, the second argument, and you are done. In our case we have a third argument, a boolean. This tells the core to execute the middleware on initialization. This is typically for packages that can trigger updates, like a router, that receives request events.</p>
 <blockquote>
 <p>To learn more about extensions and execution on initialization read about writing <a href="/guide/extensions">extensions</a></p>
 </blockquote>
@@ -53,14 +51,14 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
     response.<span class="hljs-built_in">end</span>(<span class="hljs-string">'&lt;h1&gt;Hello world&lt;/h1&gt;'</span>);
   }
 })
-</code></pre><p>As you can see the middleware method expects an object as argument. It is a flat, non nested object where you can assign all the middleware that you need. In our case that is a single one. The middleware might have an odd argument signature for people who are familiar with middleware. There is a good reason for this change which you can read about in the <a href="/faq#middlware-signature">faq</a> section. The middlware is a simple response that sends back the html that we want to show on the client. Last step in the process, added the middleware to a event.</p>
+</code></pre><p>As you can see the middleware method expects an object as argument. It is a flat, non nested object where you can assign all the middleware that you need. In our case that is a single one. The middleware might have an odd argument signature for people who are familiar with middleware. There is a good reason for this change which you can read about in the <a href="/faq#middlware-signature">faq</a> section. The middlware is a simple response that sends back the html that we want to show on the client. Last step in the process, add the middleware to a event.</p>
 <pre><code><span class="hljs-selector-class">.done</span>(<span class="hljs-string">'response'</span>)
-</code></pre><p>To act upon an event that might be triggered by the router, we need to add some listeners to the road. There are a couple of ways to do this. There is <code>run</code>, <code>noMatch</code>, <code>error</code> and <code>done</code>. The first three we will see in the following examples in this guide. For now we use the <code>done</code> hook. The <code>done</code> hook is the last middleware hook that gets added to the stack of middleware that needs to be executed. It is the perfect place to respond to requests and as we will see later, render html. As you can see the method takes a single argument, the middleware id. The middleware id is the key in the object that we specified in the middelware method. Now we have added a listener to the road, so whenever an update happends, regardless of the path it will go through the <code>done</code> method and in our case respond with a nice &#39;hello world&#39;.</p>
+</code></pre><p>To act upon an event that might be triggered by the router, we need to add some listeners to the road. There are a couple of ways to do this. There is <code>run</code>, <code>noMatch</code>, <code>error</code> and <code>done</code>. The first three we will see in the following examples in this guide. For now we use the <code>done</code> hook. The <code>done</code> hook is the last middleware hook that gets added to the stack of middleware that needs to be executed. It is the perfect place to respond to requests and as we will see later, render html. As you can see, the method takes a single argument, the middleware id. The middleware id is the key in the object that we specified in the middelware method. Now we have added a listener to the road, so whenever an update happends, regardless of the path it will go through the <code>done</code> method and in our case respond with a nice &#39;hello world&#39;.</p>
 <blockquote>
 <p>Read more about how the updates and middleware stack work in the <a href="/guide/stack-and-middleware">stack and middleware</a> guide.</p>
 </blockquote>
-<p>Now that we have dabbled in the Lagoon road waters it is time to add the client side routing.</p>
-<p>Next: <a href="/guide/adding-client-side-routing">Adding client side routing</a></p>
+<p>Now that we have got our feet wet in the warm calm waters of Lagoon road it is time to add a server side renderer to send some proper html back.</p>
+<p>Next: <a href="/guide/adding-server-side-renderer">Adding the server side renderer</a></p>
 
     `, 'article');
     next();

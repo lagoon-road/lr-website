@@ -33,9 +33,17 @@ const packages        = [{
   name   : 'guide: hello-world',
   output : 'source/middleware/components/guide/helloWorld.js'
 }, {
-  file   : '../lr-examples/adding-client-side-routing.md',
-  name   : 'guide: adding-client-side-routing',
-  output : 'source/middleware/components/guide/addingClientSideRouting.js'
+  file   : '../lr-examples/adding-server-side-renderer.md',
+  name   : 'guide: adding-server-side-renderer',
+  output : 'source/middleware/components/guide/addingServerSideRenderer.js'
+}, {
+  file   : '../lr-examples/handling-static-content.md',
+  name   : 'guide: handling-static-content',
+  output : 'source/middleware/components/guide/handlingStaticContent.js'
+}, {
+  file   : '../lr-examples/make-a-single-page-app.md',
+  name   : 'guide: make-a-single-page-app',
+  output : 'source/middleware/components/guide/makeASinglePageApp.js'
 }, {
   file   : '../lr-website/source/middleware/components/faq.md',
   name   : 'faq',
