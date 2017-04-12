@@ -29,7 +29,7 @@ module.exports = road => {
       .run('*', 'components.navigation')
       .noMatch('layouts.default')
     .where('client')
-      .run('*', 'events.navigation', 'domReady')
+      .run('#navigation', 'events.navigation', 'domReady')
     .where('webserver', 'client')
       .run('/', 'components.home')
       .run('/guide', 'components.guide')

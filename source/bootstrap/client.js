@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   require('./road')(road)
     .where('client')
-      .update({ matchValue : window.location.pathname, updateType : 'domReady' })
+      .update({ matchValue : '#navigation', updateType : 'domReady' })
 });
