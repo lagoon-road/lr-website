@@ -65,7 +65,8 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <pre><code>.<span class="hljs-keyword">where</span>(<span class="hljs-string">'webserver'</span>)
 </code></pre><p>This method sets the context for all the following methods, so the core knows that the <code>run</code> method belongs to the webserver. Sharing methods between environments becomes a breeze, just add all the environments that need to share code and you are done.</p>
 <pre><code>.<span class="hljs-keyword">where</span>(<span class="hljs-string">'webserver'</span>, <span class="hljs-string">'client'</span>)
-</code></pre>
+</code></pre><p>Next: <a href="/guide/working-with-dom-events">Working with DOM events</a></p>
+
     `, 'article');
     next();
   }

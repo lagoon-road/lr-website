@@ -19,6 +19,7 @@ module.exports = road => {
         'components.guideAddingServerSideRenderer' : require('../middleware/components/guide/addingServerSideRenderer'),
         'components.guideHandlingStaticContent' : require('../middleware/components/guide/handlingStaticContent'),
         'components.guideMakeASinglePageApp' : require('../middleware/components/guide/makeASinglePageApp'),
+        'components.guideWorkingWithDOMEvents' : require('../middleware/components/guide/workingWithDOMEvents'),
         'components.error'            : require('../middleware/components/error'),
         'components.noMatch'          : require('../middleware/components/noMatch'),
       })
@@ -37,6 +38,7 @@ module.exports = road => {
       .run('/guide/adding-server-side-renderer', 'components.guideAddingServerSideRenderer')
       .run('/guide/handling-static-content', 'components.guideHandlingStaticContent')
       .run('/guide/make-a-single-page-app', 'components.guideMakeASinglePageApp')
+      .run('/guide/working-with-dom-events', 'components.guideWorkingWithDOMEvents')
       .run('/reference', 'components.reference')
       .run('/reference/lr-core', 'components.lrCore')
       .run('/reference/lr-server-router', 'components.lrServerRouter')

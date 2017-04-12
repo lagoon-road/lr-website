@@ -2,51 +2,42 @@ const fs              = require('fs');
 const marked          = require('marked');
 const packages        = [{
   file   : 'node_modules/lr-core/README.md',
-  name   : 'lr-core',
   output : 'source/middleware/components/reference/lrCore.js'
 }, {
   file   : 'node_modules/lr-server-router/README.md',
-  name   : 'lr-server-router',
   output : 'source/middleware/components/reference/lrServerRouter.js'
 }, {
   file   : 'node_modules/lr-server-renderer/README.md',
-  name   : 'lr-server-renderer',
   output : 'source/middleware/components/reference/lrServerRenderer.js'
 }, {
   file   : 'node_modules/lr-client-router/README.md',
-  name   : 'lr-client-router',
   output : 'source/middleware/components/reference/lrClientRouter.js'
 }, {
   file   : 'node_modules/lr-client-renderer/README.md',
-  name   : 'lr-client-renderer',
   output : 'source/middleware/components/reference/lrClientRenderer.js'
 }, {
   file   : 'node_modules/lr-url-parser/README.md',
-  name   : 'lr-url-parser',
   output : 'source/middleware/components/reference/lrUrlParser.js'
 }, {
   file   : '../lr-examples/setup.md',
-  name   : 'guide: setup',
   output : 'source/middleware/components/guide/setup.js'
 }, {
   file   : '../lr-examples/hello-world.md',
-  name   : 'guide: hello-world',
   output : 'source/middleware/components/guide/helloWorld.js'
 }, {
   file   : '../lr-examples/adding-server-side-renderer.md',
-  name   : 'guide: adding-server-side-renderer',
   output : 'source/middleware/components/guide/addingServerSideRenderer.js'
 }, {
   file   : '../lr-examples/handling-static-content.md',
-  name   : 'guide: handling-static-content',
   output : 'source/middleware/components/guide/handlingStaticContent.js'
 }, {
   file   : '../lr-examples/make-a-single-page-app.md',
-  name   : 'guide: make-a-single-page-app',
   output : 'source/middleware/components/guide/makeASinglePageApp.js'
 }, {
+  file   : '../lr-examples/working-with-dom-events.md',
+  output : 'source/middleware/components/guide/workingWithDOMEvents.js'
+}, {
   file   : '../lr-website/source/middleware/components/faq.md',
-  name   : 'faq',
   output : 'source/middleware/components/faq.js'
 }];
 
@@ -74,7 +65,6 @@ packages.forEach(package => {
     const html = wrapper(marked(data));
     fs.writeFile(`${ package.output }`, html, (error) => {
       if (error) throw error;
-      console.log(`${ package.name } has been converted`);
     });
   });
 });
