@@ -40,6 +40,9 @@ const packages        = [{
   file   : '../lr-examples/adding-url-parameters-via-a-parser.md',
   output : 'source/middleware/components/guide/addingUrlParametersViaAParser.js'
 }, {
+  file   : '../lr-examples/update-and-middleware-stack.md',
+  output : 'source/middleware/components/guide/updateAndMiddlewareStack.js'
+}, {
   file   : '../lr-website/source/middleware/components/faq.md',
   output : 'source/middleware/components/faq.js'
 }];

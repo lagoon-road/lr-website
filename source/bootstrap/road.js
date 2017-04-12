@@ -23,6 +23,7 @@ module.exports = road => {
         'components.guideMakeASinglePageApp'            : require('../middleware/components/guide/makeASinglePageApp'),
         'components.guideWorkingWithDOMEvents'          : require('../middleware/components/guide/workingWithDOMEvents'),
         'components.guideAddingUrlParametersViaAParser' : require('../middleware/components/guide/addingUrlParametersViaAParser'),
+        'components.guideUpdateAndMiddlewareStack'      : require('../middleware/components/guide/updateAndMiddlewareStack'),
       })
       .run('*', 'debug')
     .where('webserver')
@@ -41,6 +42,7 @@ module.exports = road => {
       .run('/guide/make-a-single-page-app', 'components.guideMakeASinglePageApp')
       .run('/guide/working-with-dom-events', 'components.guideWorkingWithDOMEvents')
       .run('/guide/adding-url-parameters-via-a-parser', 'components.guideAddingUrlParametersViaAParser')
+      .run('/guide/update-and-middleware-stack', 'components.guideUpdateAndMiddlewareStack')
       .run('/reference', 'components.reference')
       .run('/reference/lr-core', 'components.lrCore')
       .run('/reference/lr-server-router', 'components.lrServerRouter')

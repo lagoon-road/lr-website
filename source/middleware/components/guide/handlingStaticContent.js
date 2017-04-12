@@ -59,7 +59,7 @@ const path = <span class="hljs-built_in">require</span>(<span class="hljs-string
     }
   });
 }
-</code></pre><p>We will not going to much into detail on how this middleware works, it is pretty self explanatory. The only thing to notice is that we use <code>relay.exit()</code> after we are done responding to a static request. Read the <a href="/guide/stack-and-middleware">stack and middleware</a> section to find out why.</p>
+</code></pre><p>We will not going to much into detail on how this middleware works, it is pretty self explanatory. The only thing to notice is that we use <code>relay.exit()</code> after we are done responding to a static request. Read the <a href="/guide/update-and-middleware-stack">Update and middleware stack</a> section to find out why.</p>
 <p>Next: <a href="/guide/make-a-single-page-app">Turn your server side rendered page in to a single page app</a></p>
 
     `, 'article');
