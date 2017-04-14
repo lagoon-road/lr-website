@@ -3,7 +3,6 @@ module.exports = road => {
     .where('webserver', 'client')
       .middleware({
         debug                         : (next, relay, request) => { console.log(request.url); next() },
-        'components.navigation'       : require('../middleware/components/navigation'),
         'components.home'             : require('../middleware/components/home'),
         'components.reference'        : require('../middleware/components/reference'),
         'components.lrCore'           : require('../middleware/components/reference/lrCore'),
@@ -24,14 +23,14 @@ module.exports = road => {
         'components.guideWorkingWithDOMEvents'          : require('../middleware/components/guide/workingWithDOMEvents'),
         'components.guideAddingUrlParametersViaAParser' : require('../middleware/components/guide/addingUrlParametersViaAParser'),
         'components.guideUpdateAndMiddlewareStack'      : require('../middleware/components/guide/updateAndMiddlewareStack'),
+        'components.guideWritingExtensions'             : require('../middleware/components/guide/writingExtensions'),
       })
       .run('*', 'debug')
     .where('webserver')
       .run('*', 'layouts.default')
-      .run('*', 'components.navigation')
       .noMatch('layouts.default')
     .where('client')
-      .run('#navigation', 'events.navigation', 'domReady')
+      .run('*', 'events.default', 'defaultLoaded')
     .where('webserver', 'client')
       .run('/', 'components.home')
       .run('/guide', 'components.guide')
@@ -43,6 +42,7 @@ module.exports = road => {
       .run('/guide/working-with-dom-events', 'components.guideWorkingWithDOMEvents')
       .run('/guide/adding-url-parameters-via-a-parser', 'components.guideAddingUrlParametersViaAParser')
       .run('/guide/update-and-middleware-stack', 'components.guideUpdateAndMiddlewareStack')
+      .run('/guide/writing-extensions', 'components.guideWritingExtensions')
       .run('/reference', 'components.reference')
       .run('/reference/lr-core', 'components.lrCore')
       .run('/reference/lr-server-router', 'components.lrServerRouter')
@@ -53,7 +53,6 @@ module.exports = road => {
       .run('/faq', 'components.faq')
       .noMatch('components.noMatch')
       .error('components.error')
+    .where('webserver')
       .done('response.html')
-
-  return road;
 }

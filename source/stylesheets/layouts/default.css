@@ -6,6 +6,43 @@ body {
   background-size: 100vw, 100vw;
   overflow-x: hidden;
 }
+nav {
+  height: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  z-index: 4;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+nav li a {
+  font-size: 1.2rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  display: inline-block;
+  padding: 15px 10px;
+  color: #ccc;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav li a:hover {
+  animation: jello 1s;
+  color: orange;
+}
+nav li {
+  animation: bounceIn 1s;
+}
 .logo {
   width: 18vw;
   position: absolute;
@@ -62,86 +99,28 @@ footer {
   text-transform: uppercase;
 }
 
-@keyframes drive {
-  from {
-    transform: translateY(-20vh);
-  }
-  to {
-    transform: translateY(400vh);
-  }
-}
 .car {
   position: absolute;
   top: 0;
   margin: 0 41vw 0 53vw;
   width: 6vw;
-  animation-duration: 8s;
-  animation-name: drive;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes cloud-1 {
-  0% {
-    transform: translate(-28vw, 30vh);
-  }
-  70% {
-    transform: translate(100vw, 10vh);
-  }
-  100% {
-    transform: translate(100vw, 10vh);
-  }
-}
-@keyframes cloud-2 {
-  0% {
-    transform: translate(-28vw, 100vh);
-  }
-  30% {
-    transform: translate(-28vw, 100vh);
-  }
-  100% {
-    transform: translate(100vw, 80vh);
-  }
-}
-@keyframes cloud-3 {
-  0% {
-    transform: translate(-30vw, 200vh);
-  }
-  10% {
-    transform: translate(-30vw, 200vh);
-  }
-  80% {
-    transform: translate(100vw, 180vh);
-  }
-  100% {
-    transform: translate(100vw, 180vh);
-  }
 }
 .cloud {
   position: absolute;
   z-index: 1;
   width: 28vw;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 .cloud-1 {
-  animation-duration: 14s;
-  animation-name: cloud-1;
+  left: -4vw;
+  top: 0vw;
 }
 .cloud-2 {
-  animation-duration: 18s;
-  animation-name: cloud-2;
+  right: 10vw;
+  top: 30vw;
 }
 .cloud-3 {
-  animation-duration: 20s;
-  animation-name: cloud-3;
-}
-.animations {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
+  right: 50vw;
+  top: 70vw;
 }
 
 @media screen and (max-width: 800px) {
@@ -158,9 +137,6 @@ footer {
   .logo {
     width: 20vw;
     margin: 0 40vw;
-  }
-  .car {
-    animation-duration: 16s;
   }
 }
 

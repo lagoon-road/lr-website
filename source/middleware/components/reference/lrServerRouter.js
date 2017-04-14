@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="lg-server-router-reference">lg-server-router reference</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="lg-server-router-reference">lg-server-router reference</h1>
 <p>A Lagoon road extension that gives you route functionality on the server.</p>
 <table>
 <thead>
@@ -52,6 +53,7 @@
   .extension(<span class="hljs-string">'router'</span>, router, true);
 </code></pre><hr>
 
+        </section>
     `, 'article');
     next();
   }

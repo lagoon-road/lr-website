@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="adding-server-side-renderer">Adding server side renderer</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="adding-server-side-renderer">Adding server side renderer</h1>
 <p>After creating a simple hello world example it is time to add some proper rendering to the server side. The following code uses the <code>lr-server-renderer</code> the let us easily add a template and components.</p>
 <h5 id="adding-server-side-renderer-source-bootstrap-webserver-js">adding-server-side-renderer/source/bootstrap/webserver.js</h5>
 <pre><code><span class="hljs-keyword">const</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
@@ -121,6 +122,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <p>Before we go and add the client side code to create a single page app, we want to take a look at how we can handle static content, like our javascript files, images and stylesheets.</p>
 <p>Next: <a href="/guide/handling-static-content">Handling static content</a></p>
 
+        </section>
     `, 'article');
     next();
   }

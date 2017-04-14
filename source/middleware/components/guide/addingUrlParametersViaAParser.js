@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="adding-url-parameters-via-a-parser">Adding url parameters via a parser</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="adding-url-parameters-via-a-parser">Adding url parameters via a parser</h1>
 <p>One of the most common tasks that a web server has to perform is take some dynamic parameter from the url and give that back the backend so it can handle it. In Lagoon road we use parsers for this.</p>
 <h5 id="adding-url-parameters-via-a-parser-source-bootstrap-road-js">adding-url-parameters-via-a-parser/source/bootstrap/road.js</h5>
 <pre><code><span class="hljs-keyword">const</span> debug  = require(<span class="hljs-string">'../extensions/debug'</span>);
@@ -39,6 +40,7 @@
 </blockquote>
 <p>Next: <a href="/guide/update-and-middleware-stack">Update and middleware stack</a></p>
 
+        </section>
     `, 'article');
     next();
   }

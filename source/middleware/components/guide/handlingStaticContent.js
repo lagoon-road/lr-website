@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="handling-static-content">Handling static content</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="handling-static-content">Handling static content</h1>
 <p><strong>Although it is possible to add middleware to handle your static files, like scripts, images and stylesheets. It is better to do this via a reverse proxy on a webserver like Nginx. Node is not the best choice when it comes to serving static content. This is way easier with a Nginx setup. It is trivial to gzip your files, add caching and catch redundant calls to your node server.
 Furthermore it is pretty straight forward to add HTTPS with let&#39;s encrypt.</strong></p>
 <p><strong>Read more about reverse proxies and Nginx in <a href="https://code.lengstorf.com/deploy-nodejs-ssl-digitalocean/">this</a> outstanding post. Although it is for a Digital Ocean droplet, it shows you very clearly how to setup a reverse proxy that you can use without Digital Ocean.</strong></p>
@@ -62,6 +63,7 @@ const path = <span class="hljs-built_in">require</span>(<span class="hljs-string
 </code></pre><p>We will not going to much into detail on how this middleware works, it is pretty self explanatory. The only thing to notice is that we use <code>relay.exit()</code> after we are done responding to a static request. Read the <a href="/guide/update-and-middleware-stack">Update and middleware stack</a> section to find out why.</p>
 <p>Next: <a href="/guide/make-a-single-page-app">Turn your server side rendered page in to a single page app</a></p>
 
+        </section>
     `, 'article');
     next();
   }

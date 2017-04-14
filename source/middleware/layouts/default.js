@@ -11,16 +11,20 @@ module.exports = (next, relay, request, response) => {
         <link rel="stylesheet" href="/stylesheets/styles.css">
         <script src="/scripts/main.min.js"></script>
       </head>
-      <body>
-        <div class="animations">
-          <img src="/images/cloud-1.svg" class="cloud cloud-1">
-          <img src="/images/cloud-2.svg" class="cloud cloud-2">
-          <img src="/images/cloud-3.svg" class="cloud cloud-3">
-          <img src="/images/car-1.svg" class="car">
-        </div>
-        <img src="/images/tree.svg" class="tree">
+      <body id="default" data-lr="loaded">
+        <img src="/images/cloud-1.svg" class="cloud cloud-1">
+        <img src="/images/cloud-2.svg" class="cloud cloud-2">
+        <img src="/images/cloud-3.svg" class="cloud cloud-3">
+        <img src="/images/car-1.svg" class="car">
         <img src="/images/logo.svg" class="logo">
-        <section id="navigation"></section>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/guide">Guide</a></li>
+            <li><a href="/reference">Reference</a></li>
+            <li><a href="/faq">Faq</a></li>
+          </ul>
+        </nav>
         <div class="content">
           <article></article>
           <footer>

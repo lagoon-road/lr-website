@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="lg-client-renderer-reference">lg-client-renderer reference</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="lg-client-renderer-reference">lg-client-renderer reference</h1>
 <p>A Lagoon road extension that gives you renderer functionality on the client. This renderer does quick replacement and doesn&#39;t do virtual dom html difference changes. It should suffice for about 95% of all cases. When you start working more with a websocket pub/sub system you might want to consider writing your own renderer or use a virtual dom approach so user input will not get replaced on dom updates. Read more about writing extensions in the <a href="https://www.lagoonroad.com/guide">guide</a>.</p>
 <table>
 <thead>
@@ -58,6 +59,7 @@
 <pre><code>renderer.html()<span class="hljs-comment">;</span>
 </code></pre><p><em>Replaces all the components that are added with <code>renderer.render</code> to the template at once. This way templates will only be added once even if they have been declared for replacement multiple times. </em></p>
 
+        </section>
     `, 'article');
     next();
   }

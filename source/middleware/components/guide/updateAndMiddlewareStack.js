@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="update-and-middleware-stack">Update and middleware stack</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="update-and-middleware-stack">Update and middleware stack</h1>
 <p>As you have seen by now in the examples within this guide, there is a common pattern that we follow in Lagoon road. We listen to update events and match them with the <code>updateType</code> and <code>matchValue</code>. So what does happen in the core whenever a update event is fired?</p>
 <p>Each time the update event is triggered the core looks up all the middleware that matches that specific update. If it can find matches for the update it will add the middleware that is added via the <code>run</code> method to the stack. If there is no match, <code>noMatch</code> will be added to the stack.</p>
 <p>Next the <code>done</code> middleware will be concatenated with the stack that just has been created. Once we have a final array of all the middleware that we need, we start to thunkify the middleware function to get the typical <code>next()</code> functions. Everytime the <code>next()</code> function is called it will merge the <code>relay</code> data with the data that already exist and a check is performed to see if the middleware signature should be traditional or not.</p>
@@ -16,6 +17,7 @@
 </blockquote>
 <p>Next: <a href="/guide/writing-extensions">Writing extensions</a></p>
 
+        </section>
     `, 'article');
     next();
   }

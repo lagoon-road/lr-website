@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="lg-core-reference">lg-core reference</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="lg-core-reference">lg-core reference</h1>
 <p>The <em>lr-core</em> package is the only mandatory package for Lagoon road. This package connects everything together, regardless of environment.</p>
 <table>
 <thead>
@@ -135,6 +136,7 @@ Every time a update method is called the middleware that matches will be added t
 <h3 id="relay-exit-function">relay.exit():function</h3>
 <p>When you want to prematurely finish the update cycle you have to call the <code>exit()</code> function. You want to use this when you want to send a <code>response.end</code> before the <code>done</code> hook. This function should be used rarely, read more about it in the <a href="/guide/stack">stack</a> and <a href="/guide/serving-static-content">serving static content</a> guides.</p>
 
+        </section>
     `, 'article');
     next();
   }

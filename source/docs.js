@@ -43,6 +43,9 @@ const packages        = [{
   file   : '../lr-examples/update-and-middleware-stack.md',
   output : 'source/middleware/components/guide/updateAndMiddlewareStack.js'
 }, {
+  file   : '../lr-examples/writing-extensions.md',
+  output : 'source/middleware/components/guide/writingExtensions.js'
+}, {
   file   : '../lr-website/source/middleware/components/faq.md',
   output : 'source/middleware/components/faq.js'
 }];
@@ -57,7 +60,9 @@ function wrapper(html) {
   return `
     module.exports = (next, relay) => \{
       relay.extensions.renderer.render(\`
-        ${ html }
+        <section id="" data="lr-loaded">
+          ${ html }
+        </section>
     \`, 'article');
     next();
   \}

@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="faq">Faq</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="faq">Faq</h1>
 <p>Answers to some common questions you might have. Cannot find an answer? Please open an <a href="https://github.com/lagoon-road/lr-core/issues/new">issue</a> on Github. I will keep this list up to date so all questions asked on Github that have any merit will be added to this list.</p>
 <ul class="submenu">
   <li><a href="#which-versions-of-node-are-supported-">Which versions of node are supported?</a></li>
@@ -63,6 +64,7 @@
 </blockquote>
 <p>The road that he is talking about is called Lagoon road, and since I am residing on Bali, a link with islands and the single road concept seemed like a good metaphore for the single object structure of Lagoon road.</p>
 
+        </section>
     `, 'article');
     next();
   }

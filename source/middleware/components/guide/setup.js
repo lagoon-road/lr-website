@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="installing-lagoon-road">Installing Lagoon Road</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="installing-lagoon-road">Installing Lagoon Road</h1>
 <p>Like any other npm package you can just run</p>
 <pre><code>npm <span class="hljs-selector-tag">i</span> --save lr-core
 </code></pre><p>All the package names for the supplied packages can be found in the <a href="/reference">reference overview</a>.</p>
@@ -23,6 +24,7 @@
 <pre><code>npm <span class="hljs-keyword">install</span>
 </code></pre><h4 id="next-hello-world-guide-hello-world-">Next: <a href="/guide/hello-world">Hello-world</a></h4>
 
+        </section>
     `, 'article');
     next();
   }

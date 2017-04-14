@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="working-with-dom-events">Working with DOM events</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="working-with-dom-events">Working with DOM events</h1>
 <p>In this guide we will do a simple <code>console.log</code> from our event middleware that will show you that the DOM is ready to be accessed.</p>
 <h5 id="working-with-dom-events-source-middleware-events-navigation-js">working-with-dom-events/source/middleware/events/navigation.js</h5>
 <pre><code><span class="hljs-built_in">module</span>.exports = (next, relay) =&gt; {
@@ -72,6 +73,7 @@
 </code></pre></blockquote>
 <p>Next: <a href="/guide/adding-url-parameters-via-a-parser">adding-url-parameters-via-a-parser</a></p>
 
+        </section>
     `, 'article');
     next();
   }

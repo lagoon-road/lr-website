@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="lg-server-renderer-reference">lg-server-renderer reference</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="lg-server-renderer-reference">lg-server-renderer reference</h1>
 <p>Server side renderer for lagoon road.</p>
 <table>
 <thead>
@@ -62,6 +63,7 @@
 <pre><code>renderer.html()<span class="hljs-comment">;</span>
 </code></pre><p><em>Get the final output of the template and components that you have created, this data can be send back as the response to the client.</em></p>
 
+        </section>
     `, 'article');
     next();
   }

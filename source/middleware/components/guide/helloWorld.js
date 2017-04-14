@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="hello-world">Hello world</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="hello-world">Hello world</h1>
 <p>The most simple and of course mandatory example is the hello-world example. In our case it will be a server only response which you can check in your browser. To make it happen open a browser tab and navigate to <code>http://localhost:8080</code>. This should show you a nice header with <em>Hello World</em>.</p>
 <blockquote>
 <p>Check the <a href="/guide/setup">setup and running the examples</a> to see how to start the webserver.</p>
@@ -60,6 +61,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <p>Now that we have got our feet wet in the warm calm waters of Lagoon road it is time to add a server side renderer to send some proper html back.</p>
 <p>Next: <a href="/guide/adding-server-side-renderer">Adding the server side renderer</a></p>
 
+        </section>
     `, 'article');
     next();
   }

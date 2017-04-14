@@ -1,7 +1,8 @@
 
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
-        <h1 id="make-a-single-page-app">Make a single page app</h1>
+        <section id="" data="lr-loaded">
+          <h1 id="make-a-single-page-app">Make a single page app</h1>
 <p>Now that we have all the server side stuff in place it is time to spice things up a bit and show you where Lagoon road really shines, sharing code between environments. Let&#39;s first show you the code that we use to make it all work.</p>
 <h5 id="lr-examples-make-a-single-page-app-source-webserver-js">lr-examples/make-a-single-page-app/source/webserver.js</h5>
 <pre><code><span class="hljs-keyword">const</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
@@ -67,6 +68,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <pre><code>.<span class="hljs-keyword">where</span>(<span class="hljs-string">'webserver'</span>, <span class="hljs-string">'client'</span>)
 </code></pre><p>Next: <a href="/guide/working-with-dom-events">Working with DOM events</a></p>
 
+        </section>
     `, 'article');
     next();
   }

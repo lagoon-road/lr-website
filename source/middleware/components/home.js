@@ -1,6 +1,6 @@
 module.exports = (next, relay) => {
   relay.extensions.renderer.render(`
-    <section class="home">
+    <section id="home" data-lr="loaded">
       <div class="logo-text">
         <h1>Lagoon road <span>Laid back webapps</span></h1>
       </div>

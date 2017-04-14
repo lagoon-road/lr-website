@@ -6,10 +6,9 @@
   "scripts": {
     "docs": "node source/docs.js",
     "css": "node_modules/.bin/minify --output public/stylesheets/styles.css source/stylesheets/styles.css",
-    "js-min": "node_modules/.bin/browserify source/bootstrap/client.js -t [ babelify --presets [ latest ] ] --ignore-missing | uglifyjs > public/scripts/main.min.js && rm -f public/scripts/main.js",
-    "js-file-size": "node_modules/.bin/browserify source/bootstrap/client.js --outfile public/scripts/main.js -t [ babelify --presets [ latest ] ] --ignore-missing --list | xargs ls -la --sort=size",
+    "js": "node_modules/.bin/browserify source/bootstrap/client.js -t [ babelify --presets [ latest babili ] ] --ignore-missing > public/scripts/main.min.js",
+    "js-size": "node_modules/.bin/browserify source/bootstrap/client.js -t [ babelify --presets [ latest ] ] --ignore-missing --list | xargs ls -la --sort=size",
     "serve": "NODE_ENV=development node_modules/.bin/nodemon --harmony source/bootstrap/webserver.js",
-    "prod-serve": "NODE_ENV=production node_modules/.bin/nodemon --harmony source/bootstrap/webserver.js",
     "watch": "npm-watch"
   },
   "repository": {
@@ -26,7 +25,7 @@
     "url": "https://github.com/lagoon-road/lr-website/issues"
   },
   "watch": {
-    "js-min": {
+    "js": {
       "patterns": [
         "source/*"
       ],
@@ -37,36 +36,20 @@
         "source/stylesheets"
       ],
       "extensions": "css"
-    },
-    "docs" : {
-      "patterns" : [
-        "source/middleware/components/*",
-        "../lr-examples/*",
-        "../lr-core/*",
-        "../lr-server-router/*",
-        "../lr-server-renderer/*",
-        "../lr-client-renderer/*",
-        "../lr-client-router/*",
-        "../lr-url-parser/*"
-      ],
-      "extensions" : "md"
     }
   },
   "devDependencies": {
     "babel-polyfill": "^6.23.0",
+    "babel-preset-babili": "0.0.12",
     "babel-preset-latest": "^6.22.0",
     "babelify": "^7.3.0",
     "browserify": "^14.0.0",
+    "highlight.js": "^9.10.0",
+    "marked": "^0.3.6",
     "minifier": "^0.8.1",
-    "uglify-js-harmony": "^2.7.5",
     "npm-watch": "^0.1.8",
     "pure-css": "^1.0.4",
-    "purecss": "^0.6.2",
-    "highlight.js": "^9.10.0",
-    "marked": "^0.3.6"
+    "purecss": "^0.6.2"
   },
-  "homepage": "https://github.com/lagoon-road/lr-website#readme",
-  "dependencies": {
-    "velocity-animate": "^1.5.0"
-  }
+  "homepage": "https://github.com/lagoon-road/lr-website#readme"
 }
