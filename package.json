@@ -10,7 +10,7 @@
     "js-size": "node_modules/.bin/browserify source/bootstrap/client.js -t [ babelify --presets [ latest ] ] --ignore-missing --list | xargs ls -la --sort=size",
     "serve": "NODE_ENV=development node_modules/.bin/nodemon --harmony source/bootstrap/webserver.js",
     "watch": "npm-watch",
-    "prod" : "NODE_ENV=production pm2 start source/bootstrap/webserver.js"
+    "prod" : "NODE_ENV=production pm2 start source/bootstrap/webserver.js --name=\"lagoonroad\""
   },
   "repository": {
     "type": "git",
