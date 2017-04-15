@@ -46,6 +46,12 @@ const packages        = [{
   file   : '../lr-examples/writing-extensions.md',
   output : 'source/middleware/components/guide/writingExtensions.js'
 }, {
+  file   : '../lr-examples/working-with-data.md',
+  output : 'source/middleware/components/guide/workingWithData.js'
+}, {
+  file   : '../lr-examples/writing-parsers.md',
+  output : 'source/middleware/components/guide/writingParsers.js'
+}, {
   file   : '../lr-website/source/middleware/components/faq.md',
   output : 'source/middleware/components/faq.js'
 }];
@@ -61,7 +67,7 @@ function wrapper(html) {
     module.exports = (next, relay) => \{
       relay.extensions.renderer.render(\`
         <section id="" data="lr-loaded">
-          ${ html }
+          ${ html.replace(/https\:\/\/lagoonroad\.com/gi, '') }
         </section>
     \`, 'article');
     next();

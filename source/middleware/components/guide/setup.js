@@ -5,7 +5,9 @@
           <h1 id="installing-lagoon-road">Installing Lagoon Road</h1>
 <p>Like any other npm package you can just run</p>
 <pre><code>npm <span class="hljs-selector-tag">i</span> --save lr-core
-</code></pre><p>All the package names for the supplied packages can be found in the <a href="/reference">reference overview</a>.</p>
+</code></pre><blockquote>
+<p>All the package names for the supplied packages can be found in the <a href="/reference">reference overview</a>.</p>
+</blockquote>
 <h2 id="following-the-examples">Following the examples</h2>
 <p>The easiest way to follow the examples is just to clone the lr-examples repo. This repo contains some build tools that help generating client side js code. So you don&#39;t have to manually setup Babel, Browserify and the likes.</p>
 <p>If you feel more adventurous, you can just checkout the packages you need and glance over the examples, it will show you how to use the road on client and server among some other common scenarios.</p>
@@ -22,7 +24,10 @@
 <pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> serve</span>
 </code></pre><p>Before you can run the code, you need to install all the npm packages, to do so run the command below, you only have to do this once.</p>
 <pre><code>npm <span class="hljs-keyword">install</span>
-</code></pre><h4 id="next-hello-world-guide-hello-world-">Next: <a href="/guide/hello-world">Hello-world</a></h4>
+</code></pre><blockquote>
+<p>The Lagoon road packages contain ES6 code, for the client it will be transpiled and browserified. Server side code isn&#39;t transpiled so either install the latest node version or transpile the code to run it in an older node version.</p>
+</blockquote>
+<h4 id="next-hello-world-guide-hello-world-">Next: <a href="/guide/hello-world">Hello-world</a></h4>
 
         </section>
     `, 'article');

@@ -2,7 +2,7 @@
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
         <section id="" data="lr-loaded">
-          <h1 id="lg-server-renderer-reference">lg-server-renderer reference</h1>
+          <h1 id="lr-server-renderer-reference">lr-server-renderer reference</h1>
 <p>Server side renderer for lagoon road.</p>
 <table>
 <thead>
@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td>Usage</td>
-<td><a href="https://www.lagoonroad.com/guide">lagoonroad.com/guide</a></td>
+<td><a href="/guide">guide</a></td>
 </tr>
 </tbody>
 </table>

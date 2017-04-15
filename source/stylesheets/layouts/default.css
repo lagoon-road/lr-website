@@ -1,9 +1,5 @@
 body {
   background-color: #b2afee;
-  background-image: url(../../../images/background-top.svg), url(../../../images/background.svg);
-  background-repeat: no-repeat, repeat-y;
-  background-position: center 60px, center 60px;
-  background-size: 100vw, 100vw;
   overflow-x: hidden;
 }
 nav {
@@ -44,105 +40,67 @@ nav li {
   animation: bounceIn 1s;
 }
 .logo {
-  width: 18vw;
+  width: 260px;
   position: absolute;
-  margin: 0 41vw;
+  left: 50%;
+  margin: 0 0 0 -130px;
   text-align: center;
   z-index: 3;
-  transform: translateY(28vw) scale(1);
+  transform: translateY(120px) scale(1);
   transition: transform .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
 }
 .logo.compact {
-  transform: translateY(3vw) scale(.5);
+  transform: translateY(130px) scale(.5);
 }
-
 .content {
+  background-image: url(../../../images/background-top.svg), url(../../../images/background.svg);
+  background-repeat: no-repeat, repeat-y;
+  background-position: center 60px, center 60px;
+  background-size: contain, contain;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 2;
+  padding: 300px 20px 100px 20px;
+}
+article {
+  box-sizing: border-box;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
   padding: 30px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto;
   max-width: 800px;
-  z-index: 2;
-  position: relative;
-  box-sizing: border-box;
-  transform: translateY(40vw);
-  transition: transform .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-.content.compact {
-  transform: translateY(15vw);
-}
-
-.tree {
-  position: absolute;
-  left: 400px;
-  top: 300px;
-  width: 180px;
-}
-
-.island {
-  position: absolute;
-  left: -100px;
-  bottom: 0;
-  width: 215px;
-  z-index: 1;
 }
 footer {
-  background-color: #eee;
-  border-radius: 0 0 10px 10px;
-  padding: 30px;
+  margin-top: 30px;
   text-align: center;
-  margin: 30px -30px -30px -30px;
-  color: #999;
+  color: #fff;
   font: 200 1rem/1rem 'Oswald';
   text-transform: uppercase;
-}
-
-.car {
-  position: absolute;
-  top: 0;
-  margin: 0 41vw 0 53vw;
-  width: 6vw;
-}
-.cloud {
-  position: absolute;
-  z-index: 1;
-  width: 28vw;
-}
-.cloud-1 {
-  left: -4vw;
-  top: 0vw;
-}
-.cloud-2 {
-  right: 10vw;
-  top: 30vw;
-}
-.cloud-3 {
-  right: 50vw;
-  top: 70vw;
+  text-shadow: 1px 1px rgba(0, 0, 0, .5);
 }
 
 @media screen and (max-width: 800px) {
-  .content {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .content.compact {
-    transform: translateY(30vw);
-  }
   .logo.compact {
-    transform: translateY(16vw) scale(.7);
+    transform: translateY(150px) scale(.7);
   }
   .logo {
-    width: 20vw;
-    margin: 0 40vw;
+    transform: translateY(150px) scale(1);
+    width: 200px;
+    margin-left: -100px;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .logo.compact {
+    transform: translateY(180px) scale(.7);
+  }
   .logo {
-    width: 24vw;
-    margin: 0 38vw;
+    transform: translateY(180px) scale(1);
+    width: 160px;
+    margin-left: -80px;
   }
 }

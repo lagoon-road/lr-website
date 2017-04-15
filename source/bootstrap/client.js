@@ -5,7 +5,7 @@ road
   .extension('router', router, true)
   .extension('renderer', renderer, true)
   .middleware({
-    'events.default' : require('../middleware/events/default')
+    'events.navigation' : require('../middleware/events/navigation')
   });
 
 require('./road')(road);

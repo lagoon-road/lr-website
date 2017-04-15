@@ -3,7 +3,7 @@
       relay.extensions.renderer.render(`
         <section id="" data="lr-loaded">
           <h1 id="make-a-single-page-app">Make a single page app</h1>
-<p>Now that we have all the server side stuff in place it is time to spice things up a bit and show you where Lagoon road really shines, sharing code between environments. Let&#39;s first show you the code that we use to make it all work.</p>
+<p>Now that we have all the server side stuff in place it is time to spice things up a bit and show you where Lagoon road really shines, sharing code between environments.</p>
 <h5 id="lr-examples-make-a-single-page-app-source-webserver-js">lr-examples/make-a-single-page-app/source/webserver.js</h5>
 <pre><code><span class="hljs-keyword">const</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
 <span class="hljs-keyword">const</span> server   = protocol.createServer();
@@ -32,13 +32,10 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-renderer'</span>);
 <span class="hljs-keyword">const</span> road     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>)(<span class="hljs-string">'client'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
-  .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>)
-  .middleware({
-    <span class="hljs-string">'response'</span> : <span class="hljs-function">(<span class="hljs-params">next, relay</span>) =&gt;</span> { relay.extensions.renderer.html() }
-  });
+  .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>);
 
 <span class="hljs-built_in">require</span>(<span class="hljs-string">'./road'</span>)(road);
-</code></pre><p>As you can see the client side code looks very similar to the web server code, the packages are different but are hooked in under the exact same name, this allows us to use the same middleware for both client and server. Specific client side middleware is hooked up in the <code>client.js</code> file.</p>
+</code></pre><p>As you can see the client side code looks very similar to the web server code, the packages are different but are hooked in under the exact same name, this allows us to use the same middleware for both client and server. Specific client side middleware can be hooked up in the <code>client.js</code> file.</p>
 <h5 id="lr-examples-make-a-single-page-app-source-road-js">lr-examples/make-a-single-page-app/source/road.js</h5>
 <pre><code><span class="hljs-keyword">const</span> debug = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../extensions/debug'</span>);
 
@@ -61,7 +58,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
       .run(<span class="hljs-string">'/contact'</span>, <span class="hljs-string">'components.contact'</span>)
       .done(<span class="hljs-string">'response'</span>);
 }
-</code></pre><p>Lastly the file where all the magic happends, <code>road.js</code>. As you might have expected is this file more or less the same as the other two files, middleware is hooked up, extensions added and listeners (<code>run</code> and <code>done</code>) listening. The road file is the place where we add all the stuff that needs to be shared between our environments. This is not limited to the client and web server. If you have an api server you can add the listeners here too. You have a single file were you can find all the paths that your app is using. It becomes very easy to figure out the flow of your app.</p>
+</code></pre><p>The road file is the place where we add all the stuff that needs to be shared between our environments. This is not limited to the client and web server. If you have an API server you can add the listeners here too. You have a single file were you can find all the paths that your app is using. It becomes very easy to figure out the flow of your app.</p>
 <p>You can see that we use a new method</p>
 <pre><code>.<span class="hljs-keyword">where</span>(<span class="hljs-string">'webserver'</span>)
 </code></pre><p>This method sets the context for all the following methods, so the core knows that the <code>run</code> method belongs to the webserver. Sharing methods between environments becomes a breeze, just add all the environments that need to share code and you are done.</p>

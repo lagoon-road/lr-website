@@ -2,7 +2,7 @@
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
         <section id="" data="lr-loaded">
-          <h1 id="lg-client-router-reference">lg-client-router reference</h1>
+          <h1 id="lr-client-router-reference">lr-client-router reference</h1>
 <p>A Lagoon road extension that gives you route functionality on the client.</p>
 <table>
 <thead>
@@ -25,8 +25,8 @@
 <td>-</td>
 </tr>
 <tr>
-<td>Size (Browserify, Babel, Uglify and Gzip)</td>
-<td>639 bytes</td>
+<td>Size (Browserify, Babel and Gzip)</td>
+<td>632 bytes</td>
 </tr>
 <tr>
 <td>Version</td>
@@ -38,13 +38,13 @@
 </tr>
 <tr>
 <td>Usage</td>
-<td><a href="https://www.lagoonroad.com/guide">lagoonroad.com/guide</a></td>
+<td><a href="/guide">guide</a></td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h3 id="adding-the-extension-to-lagoon-road">Adding the extension to lagoon road</h3>
-<pre><code><span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lg-client-router'</span>);
+<pre><code><span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lr-client-router'</span>);
 <span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
 <span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'client'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, true);

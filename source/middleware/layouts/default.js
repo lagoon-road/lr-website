@@ -12,18 +12,8 @@ module.exports = (next, relay, request, response) => {
         <script src="/scripts/main.min.js"></script>
       </head>
       <body id="default" data-lr="loaded">
-        <img src="/images/cloud-1.svg" class="cloud cloud-1">
-        <img src="/images/cloud-2.svg" class="cloud cloud-2">
-        <img src="/images/cloud-3.svg" class="cloud cloud-3">
-        <img src="/images/car-1.svg" class="car">
         <img src="/images/logo.svg" class="logo">
         <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/guide">Guide</a></li>
-            <li><a href="/reference">Reference</a></li>
-            <li><a href="/faq">Faq</a></li>
-          </ul>
         </nav>
         <div class="content">
           <article></article>
@@ -31,6 +21,16 @@ module.exports = (next, relay, request, response) => {
             Lagoon road / Roy Niels / MIT License / ${ new Date().getFullYear() }
           </footer>
         </div>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-13177992-5', 'auto');
+          ga('send', 'pageview');
+
+        </script>        
       </body>
     </html>
   `);

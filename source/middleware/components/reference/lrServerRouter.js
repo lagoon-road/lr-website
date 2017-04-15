@@ -2,7 +2,7 @@
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
         <section id="" data="lr-loaded">
-          <h1 id="lg-server-router-reference">lg-server-router reference</h1>
+          <h1 id="lr-server-router-reference">lr-server-router reference</h1>
 <p>A Lagoon road extension that gives you route functionality on the server.</p>
 <table>
 <thead>
@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td>Usage</td>
-<td><a href="https://www.lagoonroad.com/guide">lagoonroad.com/guide</a></td>
+<td><a href="/guide">guide</a></td>
 </tr>
 </tbody>
 </table>
@@ -47,7 +47,7 @@
 <p>This package doesn&#39;t have any exposed methods, it does however needs a single argument on creation.</p>
 <pre><code><span class="hljs-attribute">const protocol</span> = require(<span class="hljs-string">'http'</span>);
 <span class="hljs-attribute">const server</span>   = protocol.createServer();
-<span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lg-server-router'</span>)(server);
+<span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lr-server-router'</span>)(server);
 <span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
 <span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'webserver'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, true);

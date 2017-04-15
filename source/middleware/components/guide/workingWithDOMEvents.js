@@ -11,37 +11,23 @@
 }
 </code></pre><p>Just a regular middleware function that should give is the number of menu items.</p>
 <h5 id="working-with-dom-events-source-middleware-bootstrap-client-js">working-with-dom-events/source/middleware/bootstrap/client.js</h5>
-<pre><code><span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"DOMContentLoaded"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-  <span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-router'</span>);
-  <span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-renderer'</span>);
-  <span class="hljs-keyword">const</span> core     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>);
-  <span class="hljs-keyword">const</span> road     = core(<span class="hljs-string">'client'</span>)
-    .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
-    .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>)
-    .middleware({
-      <span class="hljs-string">'response'</span>          : <span class="hljs-function">(<span class="hljs-params">next, relay</span>) =&gt;</span> { relay.extensions.renderer.html() },
-      <span class="hljs-string">'events.navigation'</span> : <span class="hljs-built_in">require</span>(<span class="hljs-string">'../middleware/events/navigation'</span>)
-    });
+<pre><code><span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-router'</span>);
+<span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-renderer'</span>);
+<span class="hljs-keyword">const</span> core     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>);
+<span class="hljs-keyword">const</span> road     = core(<span class="hljs-string">'client'</span>)
+  .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
+  .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>)
+  .middleware({
+    <span class="hljs-string">'events.navigation'</span> : <span class="hljs-built_in">require</span>(<span class="hljs-string">'../middleware/events/navigation'</span>)
+  });
 
-  <span class="hljs-built_in">require</span>(<span class="hljs-string">'./road'</span>)(road)
-    .where(<span class="hljs-string">'client'</span>)
-      .update({ <span class="hljs-attr">matchValue</span> : <span class="hljs-string">'nav'</span>, <span class="hljs-attr">updateType</span> : <span class="hljs-string">'domReady'</span> })
-});
-</code></pre><p>The most changes have happend in the <code>client.js</code> file. Firstly we wrapped the whole code in a <code>DOMContentLoaded</code> event handler. The reason for this is that we want to initialize the events middleware when we first open the page.</p>
-<p>You can see that we also added the <code>events.navigation</code> middleware to this file, DOM events happen only on the client so this will make sense.</p>
-<p>The third and last change is the following piece of code</p>
-<pre><code><span class="hljs-selector-tag">require</span>(<span class="hljs-string">'./road'</span>)(road)
-  <span class="hljs-selector-class">.where</span>(<span class="hljs-string">'client'</span>)
-    <span class="hljs-selector-class">.update</span>({ <span class="hljs-attribute">matchValue </span>: <span class="hljs-string">'nav'</span>, <span class="hljs-attribute">updateType </span>: <span class="hljs-string">'domReady'</span> })
-</code></pre><p>We have changed the <code>road.js</code> file so that it gives us back the <code>road</code> object. Once the shared methods have been applied to the road it is time to fire a manual <code>update</code> event. The <code>update</code> event takes a single object as argument with two parameters. The <code>matchValue</code> and <code>updateType</code>. In this case we want to update our road for all the <code>nav</code> html selectors that have an <code>updateType</code> of <code>domReady</code>. You can see here that Lagoon road is in no way limited to handle the http protocol. We are doing updates based on html selectors and give it a custom <code>updateType</code>!</p>
-<blockquote>
-<p>It is good practice to always wrap the <code>client.js</code> file in a <code>DOMContentLoaded</code> event. This way you can always update the road when you need to.</p>
-</blockquote>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'./road'</span>)(road);
+</code></pre><p>We have added the middleware to the client, this is obviously because it should only be used on the clientside.</p>
 <h5 id="working-with-dom-events-source-middleware-bootstrap-road-js">working-with-dom-events/source/middleware/bootstrap/road.js</h5>
 <pre><code><span class="hljs-keyword">const</span> debug = require(<span class="hljs-string">'../extensions/debug'</span>);
 
 <span class="hljs-keyword">module</span>.exports = road =&gt; {
-  <span class="hljs-built_in">return</span> road
+  road
     .extension(<span class="hljs-string">'debug'</span>, debug)
     .middleware({
       debug                   : require(<span class="hljs-string">'../middleware/debug'</span>),
@@ -54,24 +40,30 @@
       .<span class="hljs-built_in">run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'statics'</span>)
       .<span class="hljs-built_in">run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'layouts.default'</span>)
     .where(<span class="hljs-string">'client'</span>)
-      .<span class="hljs-built_in">run</span>(<span class="hljs-string">'nav'</span>, <span class="hljs-string">'events.navigation'</span>, <span class="hljs-string">'domReady'</span>)
+      .<span class="hljs-built_in">run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'events.navigation'</span>, <span class="hljs-string">'navigationLoaded'</span>)
     .where(<span class="hljs-string">'webserver'</span>, <span class="hljs-string">'client'</span>)
       .<span class="hljs-built_in">run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'components.navigation'</span>)
       .<span class="hljs-built_in">run</span>(<span class="hljs-string">'/'</span>, <span class="hljs-string">'components.home'</span>)
       .<span class="hljs-built_in">run</span>(<span class="hljs-string">'/contact'</span>, <span class="hljs-string">'components.contact'</span>)
+    .where(<span class="hljs-string">'webserver'</span>)
       .done(<span class="hljs-string">'response'</span>);
 }
-</code></pre><p>The last file that has changed is the <code>road.js</code> file. Two changes have been made to this file. We are returning the road object, so the client can initiate the update on <code>DOMContentLoaded</code>. The other change is the following code</p>
-<pre><code><span class="hljs-selector-class">.where</span>(<span class="hljs-string">'client'</span>)
-  <span class="hljs-selector-class">.run</span>(<span class="hljs-string">'nav'</span>, <span class="hljs-string">'events.navigation'</span>, <span class="hljs-string">'domReady'</span>)
-</code></pre><p>We have added a listener for the <code>nav</code> html selector with <code>updateType</code> <code>domReady</code>. Every time the navigation is initialized or re-rendered it will trigger the appropriate middleware.</p>
-<blockquote>
-<p>The <code>lr-client-renderer</code> is the package that sends out events whenever a component is ready and loaded in the dom.</p>
-<p>When you want to have a component that should not be re-rendered every single time, which is typical for navigation components, you can add it the the webserver only like so</p>
-<pre><code><span class="hljs-selector-class">.where</span>(<span class="hljs-string">'webserver'</span>)
-  <span class="hljs-selector-class">.run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'components.navigation'</span>)
-</code></pre></blockquote>
-<p>Next: <a href="/guide/adding-url-parameters-via-a-parser">adding-url-parameters-via-a-parser</a></p>
+</code></pre><p>We added a new hook to the road</p>
+<pre><code>.<span class="hljs-built_in">run</span>(<span class="hljs-string">'*'</span>, <span class="hljs-string">'events.navigation'</span>, <span class="hljs-string">'navigationLoaded'</span>)
+</code></pre><p>As you can see we added a custom <code>updateType</code>. This is an update type that the client side router triggers whenever a file has been added to the DOM. How it is constructed we will see after we have looked at the navigation template middleware.</p>
+<h5 id="working-with-dom-events-source-middleware-middleware-components-navigation-js">working-with-dom-events/source/middleware/middleware/components/navigation.js</h5>
+<pre><code>module.exports = (next, relay, request) =&gt; {
+  relay.extensions.debug('Rendering component navigation: ' + request.url);
+  relay.extensions.renderer.render('
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"navigation"</span> <span class="hljs-attr">data-lr</span>=<span class="hljs-string">"loaded"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/contact"</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  ', 'nav');
+  next();
+}
+</code></pre><p>We added an <code>id</code> and a <code>data-lr</code> attribute. Together they are responsible for the DOM added update event. The <code>id</code> is just for the identification of the component. The <code>data-lr</code> attribute adds a type to the component. You can create several templates for the same component. One for when data is loading, one for when data is loaded and you could add one when an error occurs. The <code>data-lr</code> value will be passed through as the <code>updateType</code> together with the id in a camelcased form. So in this example it will be <code>navigationLoaded</code>.</p>
+<p>Next: <a href="/guide/adding-url-parameters-via-a-parser">Adding url parameters via a parser</a></p>
 
         </section>
     `, 'article');

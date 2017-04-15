@@ -36,7 +36,7 @@
 <pre><code>.<span class="hljs-keyword">parser</span>(<span class="hljs-keyword">parser</span>)
 </code></pre><p>You can now use dynamic url parts via the relay object, <code>relay.parameters</code>.</p>
 <blockquote>
-<p>The standard parser is for urls, but you are not limited to urls by any means. Want to analyze JSON or some other string values, <a href="/guide/writing-a-parser">write are parser</a> and become as flexible as you need to be</p>
+<p>The standard parser is for urls, but you are not limited to urls by any means. Want to analyze JSON or some other string values, <a href="/guide/writing-parsers">write are parser</a> and become as flexible as you need to be</p>
 </blockquote>
 <p>Next: <a href="/guide/update-and-middleware-stack">Update and middleware stack</a></p>
 
