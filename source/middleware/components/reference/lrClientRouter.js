@@ -44,10 +44,10 @@
 </table>
 <hr>
 <h3 id="adding-the-extension-to-lagoon-road">Adding the extension to lagoon road</h3>
-<pre><code><span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lr-client-router'</span>);
-<span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
-<span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'client'</span>)
-  .extension(<span class="hljs-string">'router'</span>, router, true);
+<pre><code><span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-router'</span>);
+<span class="hljs-keyword">const</span> road     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'client'</span>);
+road
+  .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>);
 </code></pre><hr>
 <h3 id="router-redirect-path-">router.redirect(path)</h3>
 <pre><code><span class="hljs-selector-tag">router</span><span class="hljs-selector-class">.redirect</span>(<span class="hljs-string">'/some-page'</span>);

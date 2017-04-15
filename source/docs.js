@@ -1,8 +1,8 @@
 const fs              = require('fs');
 const marked          = require('marked');
 const packages        = [{
-  file   : 'node_modules/lr-core/README.md',
-  output : 'source/middleware/components/reference/lrCore.js'
+  file   : 'node_modules/lr-main/README.md',
+  output : 'source/middleware/components/reference/lrMain.js'
 }, {
   file   : 'node_modules/lr-server-router/README.md',
   output : 'source/middleware/components/reference/lrServerRouter.js'

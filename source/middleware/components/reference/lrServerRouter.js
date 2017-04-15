@@ -30,7 +30,7 @@
 </tr>
 <tr>
 <td>Version</td>
-<td>1.0.0</td>
+<td>1.0.1</td>
 </tr>
 <tr>
 <td>License</td>
@@ -48,7 +48,7 @@
 <pre><code><span class="hljs-attribute">const protocol</span> = require(<span class="hljs-string">'http'</span>);
 <span class="hljs-attribute">const server</span>   = protocol.createServer();
 <span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lr-server-router'</span>)(server);
-<span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
+<span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-main'</span>);
 <span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'webserver'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, true);
 </code></pre><hr>

@@ -44,9 +44,8 @@
 </table>
 <hr>
 <h3 id="adding-the-parser-to-lagoon-road">Adding the parser to lagoon road</h3>
-<pre><code><span class="hljs-attribute">const core</span> = require(<span class="hljs-string">'lr-core'</span>);
-<span class="hljs-attribute">const road</span> = core(<span class="hljs-string">'client'</span>)
-  .parser(require(<span class="hljs-string">'lr-url-parser'</span>));
+<pre><code><span class="hljs-selector-tag">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'client'</span>)
+  <span class="hljs-selector-class">.parser</span>(require(<span class="hljs-string">'lr-url-parser'</span>));
 </code></pre><hr>
 <h3 id="parser-add-path-">parser.add(path)</h3>
 <pre><code>parser.<span class="hljs-keyword">add</span>(<span class="hljs-string">'blog/:id'</span>);

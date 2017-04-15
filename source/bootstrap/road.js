@@ -6,7 +6,7 @@ module.exports = road => {
         'components.navigation'                         : require('../middleware/components/navigation'),
         'components.home'                               : require('../middleware/components/home'),
         'components.reference'                          : require('../middleware/components/reference'),
-        'components.lrCore'                             : require('../middleware/components/reference/lrCore'),
+        'components.lrMain'                             : require('../middleware/components/reference/lrMain'),
         'components.lrServerRouter'                     : require('../middleware/components/reference/lrServerRouter'),
         'components.lrServerRenderer'                   : require('../middleware/components/reference/lrServerRenderer'),
         'components.lrClientRouter'                     : require('../middleware/components/reference/lrClientRouter'),
@@ -50,7 +50,7 @@ module.exports = road => {
       .run('/guide/working-with-data', 'components.guideWorkingWithData')
       .run('/guide/writing-parsers', 'components.guideWritingParsers')
       .run('/reference', 'components.reference')
-      .run('/reference/lr-core', 'components.lrCore')
+      .run('/reference/lr-main', 'components.lrMain')
       .run('/reference/lr-server-router', 'components.lrServerRouter')
       .run('/reference/lr-server-renderer', 'components.lrServerRenderer')
       .run('/reference/lr-client-router', 'components.lrClientRouter')

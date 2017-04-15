@@ -9,7 +9,7 @@
 <span class="hljs-keyword">const</span> server   = protocol.createServer();
 <span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-server-router'</span>)(server);
 <span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-server-renderer'</span>)();
-<span class="hljs-keyword">const</span> road     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>)(<span class="hljs-string">'webserver'</span>)
+<span class="hljs-keyword">const</span> road     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'webserver'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
   .extension(<span class="hljs-string">'renderer'</span>, renderer)
   .middleware({
@@ -30,7 +30,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <h5 id="lr-examples-make-a-single-page-app-source-client-js">lr-examples/make-a-single-page-app/source/client.js</h5>
 <pre><code><span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-router'</span>);
 <span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-renderer'</span>);
-<span class="hljs-keyword">const</span> road     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>)(<span class="hljs-string">'client'</span>)
+<span class="hljs-keyword">const</span> road     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'client'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
   .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>);
 

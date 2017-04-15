@@ -2,7 +2,7 @@ const settings    = require('../extensions/settings/webserver');
 const protocol    = require('http');
 const server      = protocol.createServer();
 const router      = require('lr-server-router')(server, settings.redirectDomain);
-const road        = require('lr-core')('webserver');
+const road        = require('lr-main')('webserver');
 const renderer    = require('lr-server-renderer');
 
 server.listen(settings.port, settings.domain, function() {

@@ -7,12 +7,11 @@
 <h5 id="adding-server-side-renderer-source-bootstrap-webserver-js">adding-server-side-renderer/source/bootstrap/webserver.js</h5>
 <pre><code><span class="hljs-keyword">const</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
 <span class="hljs-keyword">const</span> server   = protocol.createServer();
-<span class="hljs-keyword">const</span> core     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>);
 <span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-server-router'</span>)(server);
 <span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-server-renderer'</span>)();
 <span class="hljs-keyword">const</span> debug    = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../extensions/debug'</span>);
 
-core(<span class="hljs-string">'webserver'</span>)
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'webserver'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
   .extension(<span class="hljs-string">'renderer'</span>, renderer)
   .extension(<span class="hljs-string">'debug'</span>, debug)

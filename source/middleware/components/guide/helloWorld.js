@@ -12,10 +12,8 @@
 <h5 id="hello-world-source-bootstrap-webserver-js">hello-world/source/bootstrap/webserver.js</h5>
 <pre><code><span class="hljs-keyword">const</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
 <span class="hljs-keyword">const</span> server   = protocol.createServer();
-<span class="hljs-keyword">const</span> core     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>);
 <span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-server-router'</span>)(server);
-
-core(<span class="hljs-string">'webserver'</span>)
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'webserver'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
   .middleware({
     <span class="hljs-attr">response</span> : <span class="hljs-function">(<span class="hljs-params">next, relay, request, response</span>) =&gt;</span> {
@@ -35,7 +33,7 @@ server.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"
 <p>Lagoon road doesn&#39;t limit itself to the HTTP protocol. Using websockets, or maybe both together, <a href="/guide/writing-extensions">extensions</a> are the way to go.</p>
 </blockquote>
 <p>The next step is initializing the core and create a road object.</p>
-<pre><code><span class="hljs-function"><span class="hljs-title">core</span><span class="hljs-params">(<span class="hljs-string">'webserver'</span>)</span></span>
+<pre><code><span class="hljs-function"><span class="hljs-title">require</span><span class="hljs-params">(<span class="hljs-string">'lr-main'</span>)</span><span class="hljs-params">(<span class="hljs-string">'webserver'</span>)</span></span>
 </code></pre><p>We intialize the core here with a single argument. The argument is the identifier for our environment. Each time you initialize the road you want to tell it the context of where we want to attach the middleware and extensions. In this case we want to run it as a web server so we use that as the identifier.</p>
 <blockquote>
 <p>The executing environment, in this case <code>webserver</code> will make more sense when we have more environments and start sharing code between them. We will look at that in the next examples.</p>

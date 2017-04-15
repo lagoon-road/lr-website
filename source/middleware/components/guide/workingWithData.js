@@ -9,8 +9,7 @@
 <span class="hljs-keyword">const</span> router     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-router'</span>);
 <span class="hljs-keyword">const</span> renderer   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-renderer'</span>);
 <span class="hljs-keyword">const</span> httpClient = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../extensions/httpClient'</span>)(<span class="hljs-string">'http://eol.org/api/'</span>);
-<span class="hljs-keyword">const</span> core       = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-core'</span>);
-<span class="hljs-keyword">const</span> road       = core(<span class="hljs-string">'client'</span>)
+<span class="hljs-keyword">const</span> road       = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'client'</span>)
   .extension(<span class="hljs-string">'router'</span>, router, <span class="hljs-literal">true</span>)
   .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>)
   .extension(<span class="hljs-string">'httpClient'</span>, httpClient)

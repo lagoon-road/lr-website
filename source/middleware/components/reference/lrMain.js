@@ -2,8 +2,8 @@
     module.exports = (next, relay) => {
       relay.extensions.renderer.render(`
         <section id="" data="lr-loaded">
-          <h1 id="lr-core-reference">lr-core reference</h1>
-<p>The <em>lr-core</em> package is the only mandatory package for Lagoon road. This package connects everything together, regardless of environment.</p>
+          <h1 id="lr-main-reference">lr-main reference</h1>
+<p>The <em>lr-main</em> package is the only mandatory package for Lagoon road. This package connects everything together, regardless of environment.</p>
 <table>
 <thead>
 <tr>
@@ -14,11 +14,11 @@
 <tbody>
 <tr>
 <td>Code coverage</td>
-<td><a href="https://coveralls.io/github/lagoon-road/lr-core?branch=master"><img src="https://coveralls.io/repos/github/lagoon-road/lr-core/badge.svg?branch=master" alt="Coverage Status"></a></td>
+<td><a href="https://coveralls.io/github/lagoon-road/lr-main?branch=master"><img src="https://coveralls.io/repos/github/lagoon-road/lr-main/badge.svg?branch=master" alt="Coverage Status"></a></td>
 </tr>
 <tr>
 <td>Repo link</td>
-<td><a href="https://github.com/lagoon-road/lr-core">lr-core</a></td>
+<td><a href="https://github.com/lagoon-road/lr-main">lr-main</a></td>
 </tr>
 <tr>
 <td>Dependencies</td>
@@ -44,7 +44,7 @@
 </table>
 <hr>
 <h3 id="core-environmentid-options-">core(environmentId, [options])</h3>
-<pre><code><span class="hljs-attribute">const core</span> = require(<span class="hljs-string">'lr-core'</span>);
+<pre><code><span class="hljs-attribute">const core</span> = require(<span class="hljs-string">'lr-main'</span>);
 <span class="hljs-attribute">const road</span> = core(<span class="hljs-string">'webserver'</span>);
 </code></pre><p><strong>environmentId:string</strong><br>The primary environment id for the road, this is the executing environment that will be used when an update event is fired.</p>
 <p><strong>[options.resetAfterCycle:boolean]</strong><br>By default the relay object gets cleared after an update event of the road, sometimes, mainly on the client, you want to keep the relay populated even if an update event has ran. To do so, you can set this boolean to  <em>false</em></p>

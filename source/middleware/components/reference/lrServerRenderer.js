@@ -18,7 +18,7 @@
 </tr>
 <tr>
 <td>Repo link</td>
-<td><a href="https://github.com/lagoon-road/lr-server-renderer">lr-core</a></td>
+<td><a href="https://github.com/lagoon-road/lr-server-renderer">lr-server-renderer</a></td>
 </tr>
 <tr>
 <td>Dependencies</td>

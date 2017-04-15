@@ -51,5 +51,12 @@
     "pure-css": "^1.0.4",
     "purecss": "^0.6.2"
   },
-  "homepage": "https://github.com/lagoon-road/lr-website#readme"
+  "homepage": "https://github.com/lagoon-road/lr-website#readme",
+  "dependencies": {
+    "lr-client-renderer": "^1.0.0",
+    "lr-client-router": "^1.0.0",
+    "lr-main": "^1.0.0",
+    "lr-server-renderer": "^1.0.0",
+    "lr-server-router": "^1.0.1"
+  }
 }

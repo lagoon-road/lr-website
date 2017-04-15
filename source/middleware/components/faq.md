@@ -1,6 +1,6 @@
 # Faq
 
-Answers to some common questions you might have. Cannot find an answer? Please open an [issue](https://github.com/lagoon-road/lr-core/issues/new) on Github. I will keep this list up to date so all questions asked on Github that have any merit will be added to this list.
+Answers to some common questions you might have. Cannot find an answer? Please open an [issue](https://github.com/lagoon-road/lr-main/issues/new) on Github. I will keep this list up to date so all questions asked on Github that have any merit will be added to this list.
 
 <ul class="submenu">
   <li><a href="#which-versions-of-node-are-supported-">Which versions of node are supported?</a></li>
@@ -52,13 +52,13 @@ Lagoon road doesn't force any structure on you. That is the phylosophy of Lagoon
 Then all client side code will be pass through babel and browserify and the minifier. View the [package.json](https://github.com/lagoon-road/lr-website/blob/master/package.json) and the [lr-website code](https://github.com/lagoon-road/lr-website)
 
 ### Why is there a different middleware argument signature?
-The reason that Lagoon road doesn't follow the standard argument order of, `request`, `response`, `next` and an optional `error` is because we are not only handling http requests and responses. In frameworks like Expressjs everything is centered around the the http protocol. In that setup it makes sense to have `request` and `response` come first. In Lagoon road we don't tie in http as the only protocol so the parameters for your middleware might be different. Same goes for the client. If we would have kept the order the same there will be a lot of cases where you are specifying parameters that are not really used. If you have traditional middleware that you want to plug in, you can make it run in the traditional order. See the [lr-core reference](/reference/lr-core) for more information.
+The reason that Lagoon road doesn't follow the standard argument order of, `request`, `response`, `next` and an optional `error` is because we are not only handling http requests and responses. In frameworks like Expressjs everything is centered around the the http protocol. In that setup it makes sense to have `request` and `response` come first. In Lagoon road we don't tie in http as the only protocol so the parameters for your middleware might be different. Same goes for the client. If we would have kept the order the same there will be a lot of cases where you are specifying parameters that are not really used. If you have traditional middleware that you want to plug in, you can make it run in the traditional order. See the [lr-main reference](/reference/lr-main) for more information.
 
 ### Do I have to call next in the done middleware?
 Yes, you always need to call the `next()` function, no matter what. Read why in the [update and middleware stack guide](/guide/update-and-middleware-stack).
 
 ### I want to keep the relay object populated after a request, how do I do that?
-This is pretty straight forward. You can just set the `resetAfterCycle` option on the core initialization. Check the [reference](/reference/lr-core) for more information.
+This is pretty straight forward. You can just set the `resetAfterCycle` option on the core initialization. Check the [reference](/reference/lr-main) for more information.
 
 ### Does the order of how I attch middleware to the road matter?
 Yes it does. The first middleware that you add, will be put first in the stack. This is why Lagoon road is simple to reason about. You just start looking from the top and see what you first match is. That will be the first middleware that will be called. Read more about the it in the [guide](/guide/update-and-middleware-stack).

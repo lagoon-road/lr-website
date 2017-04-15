@@ -47,10 +47,10 @@
 </table>
 <hr>
 <h3 id="adding-the-extension-to-lagoon-road">Adding the extension to lagoon road</h3>
-<pre><code><span class="hljs-attribute">const router</span>   = require(<span class="hljs-string">'lr-client-renderer'</span>);
-<span class="hljs-attribute">const core</span>     = require(<span class="hljs-string">'lr-core'</span>);
-<span class="hljs-attribute">const road</span>     = core(<span class="hljs-string">'client'</span>)
-  .extension(<span class="hljs-string">'renderer'</span>, renderer, true);
+<pre><code><span class="hljs-keyword">const</span> router   = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-client-renderer'</span>);
+<span class="hljs-keyword">const</span> road     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lr-main'</span>)(<span class="hljs-string">'client'</span>);
+road
+  .extension(<span class="hljs-string">'renderer'</span>, renderer, <span class="hljs-literal">true</span>);
 </code></pre><hr>
 <h3 id="renderer-render-html-placeholder-">renderer.render(html, placeholder)</h3>
 <pre><code><span class="hljs-keyword">renderer</span>.<span class="hljs-keyword">render</span>(<span class="hljs-string">'&lt;section&gt;...&lt;/section&gt;'</span>, <span class="hljs-string">'.placeholderName'</span>);

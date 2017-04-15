@@ -4,7 +4,7 @@
         <section id="" data="lr-loaded">
           <h1 id="installing-lagoon-road">Installing Lagoon Road</h1>
 <p>Like any other npm package you can just run</p>
-<pre><code>npm <span class="hljs-selector-tag">i</span> --save lr-core
+<pre><code>npm <span class="hljs-selector-tag">i</span> --save lr-main
 </code></pre><blockquote>
 <p>All the package names for the supplied packages can be found in the <a href="/reference">reference overview</a>.</p>
 </blockquote>
