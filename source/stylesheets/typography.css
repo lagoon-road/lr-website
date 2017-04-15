@@ -88,3 +88,13 @@ table th {
     font-size: 1.1rem;
   }
 }
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  pre {
+    font-size: .7rem;
+    padding: 10px;
+  }
+}
