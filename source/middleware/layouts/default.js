@@ -6,7 +6,7 @@ module.exports = (next, relay, request, response) => {
         <title>Lagoon road</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+        <meta name="description" content="Lagoon road helps you build webapps. It is not as low level as writing Javascript from scratch and it is not as high level as frameworks that can limit your flexibility. It sits right in the middle. It helps you to give structure to your app, lets you plug and play any package you like and doesn't get in the way when you write code the way you like. Lagoon road is laid back...">
         <meta name="author" content="Roy Niels">
         <link rel="stylesheet" href="/stylesheets/styles.css">
         <script src="/scripts/main.min.js"></script>
